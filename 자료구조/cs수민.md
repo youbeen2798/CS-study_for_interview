@@ -53,8 +53,7 @@
 
 ### 시간복잡도
 
-![자료구조](https://github.com/leesuuuuumm/CSstudy_for_interview/blob/main/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/image/%EC%8B%9C%EA%B0%84%EB%B3%B5%EC%9E%A1%EB%8F%84.png#:~:text=main-,CS%2Dstudy_for_interview,/%EC%8B%9C%EA%B0%84%EB%B3%B5%EC%9E%A1%EB%8F%84.png,-Go%20to%20file)
-    
+![자료구조/image/시간복잡도.png](https://github.com/leesuuuuumm/CS-study_for_interview/blob/main/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/image/%EC%8B%9C%EA%B0%84%EB%B3%B5%EC%9E%A1%EB%8F%84.png)
 
 <br>
 <br>
