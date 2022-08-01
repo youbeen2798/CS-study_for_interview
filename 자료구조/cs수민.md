@@ -53,7 +53,7 @@
 
 ### 시간복잡도
 
-![자료구조](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/86a08a5b-fd65-434a-895d-8e230f1b9e52/Untitled.png)
+![자료구조](https://github.com/leesuuuuumm/CSstudy_for_interview/blob/main/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/image/%EC%8B%9C%EA%B0%84%EB%B3%B5%EC%9E%A1%EB%8F%84.png#:~:text=main-,CS%2Dstudy_for_interview,/%EC%8B%9C%EA%B0%84%EB%B3%B5%EC%9E%A1%EB%8F%84.png,-Go%20to%20file)
     
 
 <br>
