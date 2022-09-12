@@ -36,5 +36,5 @@
 5. Atomic operations
 + 공유 자원에 접근할 때 원자 연산을 사용하거나 '원자적'으로 정의된 접근 방법을 사용함으로써 상호 배제를 구현할 수 있음 
 
-**통상적으로, mutual exclusion(상호 배제)를 통한, critical section 처리가 자주 사용되는 편임!**
+**통상적으로, mutual exclusion(상호 배제)를 통한, critical section 처리가 자주 사용되는 편임!**<br />
 **상호 배제란, 한 thread가 자원에 접근할 때, 다른 thread의 접근을 막는 것을 말함**
