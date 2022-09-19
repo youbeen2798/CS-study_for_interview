@@ -17,7 +17,7 @@
 
 
 |항목| Memcached | Redis |
-|:---|---:|:---:|
+|:---|:---:|:---:|
 |데이터분할|O|O|
 |Multi Thread / Single Thread|Multi Thread|Single Thread|
 |데이터 저장(persistence / snapshot) | X | O |
@@ -25,11 +25,6 @@
 |트랜잭션 지원|X|O|
 |Publisher|X|O|
 
-|제목|내용|설명|
-|:---|---:|:---:|
-|왼쪽정렬|오른쪽정렬|중앙정렬|
-|왼쪽정렬|오른쪽정렬|중앙정렬|
-|왼쪽정렬|오른쪽정렬|중앙정렬|
 
 - Memcached와 Redis는 모두 Key-Value 모델에 기반을 둔 NoSQL 솔루션으로, 두 솔루션 모두 캐시 레이어로서 동작
 
