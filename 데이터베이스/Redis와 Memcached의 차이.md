@@ -16,6 +16,8 @@
 - LRU 알고리즘만으로 메모리 자원을 관리
 
 
+### Memcached와 Redis의 차이
+
 |항목| Memcached | Redis |
 |---:|:---:|:---:|
 |데이터분할|O|O|
