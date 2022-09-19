@@ -16,7 +16,7 @@
 - LRU 알고리즘만으로 메모리 자원을 관리
 
 
-|항목|Memcached|Redis|
+| 항목 | Memcached | Redis |
 |데이터분할|O|O|
 |Multi Thread / Single Thread|Multi Thread|Single Thread|
 |데이터 저장(persistence / snapshot) | X | O |
