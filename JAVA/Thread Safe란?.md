@@ -10,18 +10,18 @@
 
 ### 상호배제
 - 공유자원에 하나의 Tread만 접근할 수 있도록, 세마포어/뮤텍스로 Lock을 통제하는 방법
-</br> (적용예시)
-Python은 Thread Safe하게 메로리 관리 하지 않으므로, GIL을 이용해 Thread Safe를 보장 </br>
-Python에서 Threading.lock이 있는데 Threading.lock을 acqurie하면 해당 쓰레드만 공유 데이터에 접근할 수 있고 lock을 release 해야만 다른 쓰레드에서 공유 데이터에 접근할 수 있음</br>
-Java의 Syncronized 동기화 객체 
+- (적용예시)</br> 
+1. Python은 Thread Safe하게 메로리 관리 하지 않으므로, GIL을 이용해 Thread Safe를 보장 </br>
+2. Python에서 Threading.lock이 있는데 Threading.lock을 acqurie하면 해당 쓰레드만 공유 데이터에 접근할 수 있고 lock을 release 해야만 다른 쓰레드에서 공유 데이터에 접근할 수 있음</br>
+3. Java의 Syncronized 동기화 객체 
 
 ### 원자 연산
 - 공유자원에 원자적으로 접근하는 방법으로 접근할 때 원자 연산을 이용하거나 원자적으로 정의된 접근방식을 사용함으로써 상호 배제를 구현할 수 있음</br>
-</br>
+
 - 공유 자원 변경에 필요한 연산을 원자적으로 분리한 뒤,
 - 실제로 데이터의 변경이 이뤄지는 시점에서 Lock을 걸고
 - 데이터 변경하는 시간 동안, 다른 쓰레드의 접근이 불가능하도록 하는 방법 
-</br>(적용예시)
+- (적용예시)
 </br>a+=b의 경우, 먼저 + 연산을 한 뒤 = 연산을 하기 때문에 원자적으로 볼 수 없음
 
 ### 스레드 지역 저장소
