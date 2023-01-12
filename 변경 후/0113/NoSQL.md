@@ -8,3 +8,4 @@
 
 주로 데이터가 고정되어 있지 않은 데이터베이스를 가르킨다.  </br>
 
+https://hanamon.kr/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-sql-vs-nosql/
