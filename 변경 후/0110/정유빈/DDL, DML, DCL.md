@@ -30,8 +30,6 @@
 - 데이터를 검색, 삽입, 수정, 삭제하는데 사용하며 SELECT, INSERT, DELETE, UPDATE 문 등이 있음
 - 여기서 SELECT문은 특별히 Query문(질의어)라고 함
 
-![image](https://user-images.githubusercontent.com/62228401/212206266-527cd17b-bce4-4377-9f16-72763768eec6.png)
-
 
 <h3> INSERT문 </h3>
 
@@ -56,16 +54,32 @@ SELECT bookname, publisher [속성 이름]
 FROM book [테이블 이름]
 WHERE price >= 10000; [검색 조건]
 
+- WHERE절에 조건으로 사용할 수 있는 술어는 다양하며 아래의 표에서 필요에 따라 참고하면 된다.
+
+![image](https://user-images.githubusercontent.com/62228401/212206646-11d9a8ca-116c-4410-804e-5aef23288f6a.png)
+
+- 집계 함수 종류
+
+![image](https://user-images.githubusercontent.com/62228401/212206718-85602417-48c3-4464-81de-6eaf93eaca89.png)
+
+- Join 연산
+
+![image](https://user-images.githubusercontent.com/62228401/212206775-eff4aeb6-4c16-4a5c-a2ac-67c9691ad09b.png)
+
 <h3> 부속질의(Subquery) </h3>
 
 - 상관 부속질의(Correlated subquery)는 상위 부속질의의 튜플을 이용하여 하위 부속질의를 계산함
 - 상위 부속질의와 하위 부속질의가 독립적이지 않고 서로 관련을 맺고 있음
+
+![image](https://user-images.githubusercontent.com/62228401/212206811-fb7be195-f3f2-467c-98c9-1f90499bebf8.png)
 
 <h3> EXISTS </h3>
 
 - EXISTS는 원래 단어에서 의미하는 것과 같이 조건에 맞는 튜플이 존재하면 결과에 포함시킴
 - 즉 부속질의문의 어떤 행이 조건에 만족하면 참임
 - 반면 NOT EXISTS는 부속질의문의 모든 행이 조건에 만족하지 않을 때만 참임
+
+![image](https://user-images.githubusercontent.com/62228401/212206837-bf5f8cb8-c317-4bd1-9cc6-da1539c8e819.png)
 
 <h1> 데이터 제어어(DCL) </h1>
 
