@@ -19,6 +19,7 @@
 - RDBMS의 단점이 성능을 향상시키기 위해서는 장비가 좋아야 하는 Scale-Up의 특징이 비용을 기하급수적으로 증가시키기 때문에 데이터 일관성은 포기하되 비용을 고려하여 여러 대의 데이터에 분산하여 저장하는 Scale-Out을 목표로 등장하였음
 - NoSQL을 하면 가장 유명한 Document 기반의 MongoDB를 많이 떠올리지만, MongoDB는 NoSQL의 한 종류로 NoSQL은 다양한 형태의 저장 기술을 지원하고 있음
 - 다양한 형태의 저장 기술은 RDBS 스키마에 맞추어 데이터를 관리해야 된다는 한계를 극복하고 수평적 확장성(Scale-Out)을 쉽게 할 수 있다는 장점을 가지고 있음
+- 크게 4가지 유형이 존재함
 
 <h3> 1. Key-Value Database </h3>
 
@@ -30,7 +31,7 @@
 - 간단한 API를 제공하는 만큼 질의의 속도가 굉장히 빠른 편임
 - 예시로, Redis, Riak, Amazon Dynamo DB 등이 있음
 
-<h3> Document Database </h3>
+<h3> 2. Document Database </h3>
 
 - Key와 Document 형태로 저장됨
 - Key-Value 모델과 다른 점은 Value가 계층적인 형태의 도큐먼트로 저장된다는 것임
@@ -39,17 +40,21 @@
 - 또한 검색에 최적화되어 있는데, 이는 Key-Value 모델의 특징과 동일함
 - 단점은 사용이 번거롭고, 쿼리가 SQL과는 다르다는 점이다.
 - 도큐먼트 모델에서는 질의의 결과가 JSON이나 xml 형태로 출력되기 때문에 그 사용 방법이 RDBMS의 질의 결과를 사용하는 방법과 다르다.
-- 트리형 구조로 레코드를 저장하거나 검색하는데 효과적이다.
+- 트리형 구조로 레코드를 저장하거나 검색하는데 효과적이다. ( 그러나 Scan에는 용이하지 않음)
 ![image](https://user-images.githubusercontent.com/62228401/212220138-d3448417-5fc3-4923-bee0-d7c3bbc6c3a0.png)
 - 대표적인 NoSQL Document Model로는 MongoDB, CouthDB가 있음
 
-<h3> Wide Column Database </h3>
+<h3> 3. Wide Column Database </h3>
 
-- Column Familes를 포함하는 Key Space이다.
+- 아래 그림은 Column Familes를 포함하는 Key Space
+![image](https://user-images.githubusercontent.com/62228401/212222655-17d63698-258f-4f91-85fe-85589659fa9d.png)
+
+- 아래는 3행을 포함하는 COLUMN FAMILES. 행마다 각각의 컬럼을 가진다.
 ![image](https://user-images.githubusercontent.com/62228401/212219526-5cf0fdcb-1045-40df-abeb-9e63f7418cd1.png)
+- 행마다 키와 해당 값을 저장할 때마다 각각 다른 값의 다른 수의 스키마를 가질 수 있다.
 - 대량의 데이터의 압축, 분산처리, 집계 쿼리(SUM, COUNT, AVG) 등 쿼리 동작 속도와 확장성이 뛰어난 것이 대표적 특징이다.
 
-<h3> GRAPH DATABASE </h3>
+<h3> 4. GRAPH DATABASE </h3>
 ![image](https://user-images.githubusercontent.com/62228401/212220262-df2cf812-5c31-40b1-ab26-b3586b59db59.png)
 - 데이터를 노드로 표현하며, 노드 사이의 관계를 엣지로 표현
 - RDBMS보다 Performance가 좋고 유연하며 유지보수에 용이한 것이 특징
