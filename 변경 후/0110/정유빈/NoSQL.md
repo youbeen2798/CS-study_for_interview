@@ -49,8 +49,9 @@
 - 아래 그림은 Column Familes를 포함하는 Key Space
 ![image](https://user-images.githubusercontent.com/62228401/212222655-17d63698-258f-4f91-85fe-85589659fa9d.png)
 
-- 아래는 3행을 포함하는 COLUMN FAMILES. 행마다 각각의 컬럼을 가진다.
+- 아래는 3행을 포함하는 COLUMN FAMILES로, 각 행에는 고유한 열 집합이 포함된다.
 ![image](https://user-images.githubusercontent.com/62228401/212219526-5cf0fdcb-1045-40df-abeb-9e63f7418cd1.png)
+- 각 행은 다른 행과 다른 수의 열을 포함할 수 
 - 행마다 키와 해당 값을 저장할 때마다 각각 다른 값의 다른 수의 스키마를 가질 수 있다.
 - 대량의 데이터의 압축, 분산처리, 집계 쿼리(SUM, COUNT, AVG) 등 쿼리 동작 속도와 확장성이 뛰어난 것이 대표적 특징이다.
 
