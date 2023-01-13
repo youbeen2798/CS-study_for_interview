@@ -56,6 +56,7 @@
 
 아래는 행의 각 요소에 대한 분석이다.
 ![image](https://user-images.githubusercontent.com/62228401/212224017-0489fa77-88e5-421a-b82e-6a7aa9dc3feb.png)
+    
     - ROW KEY : 각 행에는 해당 행의 고유 식별자인 고유 키가 있다.
     - 열 : 각 열에는 이름, 값, 타임스탬프가 포함된다.
     - 이름 : 이름 / 값 쌍의 이름이다.
@@ -68,6 +69,8 @@
 - 대량의 데이터의 압축, 분산처리, 집계 쿼리(SUM, COUNT, AVG) 등 쿼리 동작 속도와 확장성이 뛰어난 것이 대표적 특징이다.
 
 <h3> 4. GRAPH DATABASE </h3>
+
 ![image](https://user-images.githubusercontent.com/62228401/212220262-df2cf812-5c31-40b1-ab26-b3586b59db59.png)
+
 - 데이터를 노드로 표현하며, 노드 사이의 관계를 엣지로 표현
 - RDBMS보다 Performance가 좋고 유연하며 유지보수에 용이한 것이 특징
