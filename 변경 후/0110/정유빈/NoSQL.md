@@ -22,7 +22,10 @@
 
 <h3> 1. Key-Value Database </h3>
 
-- 데이터가 Key와 Value의 쌍으로 저장됨
+- 아래와 같이 데이터가 Key와 Value의 쌍으로 저장됨
+
+![image](https://user-images.githubusercontent.com/62228401/212219788-6263a99f-987a-4805-850d-a60fcf47d59d.png)
+- kEY-VALUE 하나의 묶음(Unique) 로 저장되는 기술로 단순한 구조이기에 속도가 빠르며 분산 저장 시 용이하다.
 - Key는 VALUE에 접근하기 위한 용도로 사용되며, 값은 어떤 형태의 데이터라도 담을 수 있음(심지어 오디오와 비디오도 가능함)
 - 간단한 API를 제공하는 만큼 질의의 속도가 굉장히 빠른 편임
 - 예시로, Redis, Riak, Amazon Dynamo DB 등이 있음
@@ -36,7 +39,17 @@
 - 또한 검색에 최적화되어 있는데, 이는 Key-Value 모델의 특징과 동일함
 - 단점은 사용이 번거롭고, 쿼리가 SQL과는 다르다는 점이다.
 - 도큐먼트 모델에서는 질의의 결과가 JSON이나 xml 형태로 출력되기 때문에 그 사용 방법이 RDBMS의 질의 결과를 사용하는 방법과 다르다.
+- 트리형 구조로 레코드를 저장하거나 검색하는데 효과적이다.
+![image](https://user-images.githubusercontent.com/62228401/212220138-d3448417-5fc3-4923-bee0-d7c3bbc6c3a0.png)
 - 대표적인 NoSQL Document Model로는 MongoDB, CouthDB가 있음
 
 <h3> Wide Column Database </h3>
 
+- Column Familes를 포함하는 Key Space이다.
+![image](https://user-images.githubusercontent.com/62228401/212219526-5cf0fdcb-1045-40df-abeb-9e63f7418cd1.png)
+- 대량의 데이터의 압축, 분산처리, 집계 쿼리(SUM, COUNT, AVG) 등 쿼리 동작 속도와 확장성이 뛰어난 것이 대표적 특징이다.
+
+<h3> GRAPH DATABASE </h3>
+![image](https://user-images.githubusercontent.com/62228401/212220262-df2cf812-5c31-40b1-ab26-b3586b59db59.png)
+- 데이터를 노드로 표현하며, 노드 사이의 관계를 엣지로 표현
+- RDBMS보다 Performance가 좋고 유연하며 유지보수에 용이한 것이 특징
