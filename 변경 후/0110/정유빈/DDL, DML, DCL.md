@@ -1,4 +1,4 @@
-<h1> 데이터 정의어(DDL) </h1>
+<h1> 데이터 정의어(DDL) - Data Definition Language</h1>
 
 - 테이블이나 관계의 구조를 생성하는데 사용하며 CREATE, ALTER, DROP문 등이 있음
 
