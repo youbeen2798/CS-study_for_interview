@@ -102,6 +102,7 @@ WHERE price >= 10000; [검색 조건]
 
 <h1> TCL(Transaction Control Language, 트랜잭션 제어 언어) </h1>
 
+- 트랜잭션을 제어하는 명령인 COMMIT과 ROLLBACK을 따로 분리하여 TCL로 표현함
 - COMMIT : 트랜잭션의 작업 결과를 저장 반영 (트랜잭션 완료)
 - ROLLBACK : 데이터베이스를 마지막 COMMIT된 시점의 상태로 복원, 데이터에 대한 변경 내용은 논리적인 트랜잭션으로 그룹화 될 수 있음
 - SAVEPOINT : 저장점(SAVEPOINT)을 정의하면 롤백(ROLLBACK)할 때 트랜잭션에 포함된 전체 작업을 롤백하는 것이 아니라 현 시점에서 SAVEPOINT까지 트랜잭션의 일부만 롤백할 수 있음.</br>
