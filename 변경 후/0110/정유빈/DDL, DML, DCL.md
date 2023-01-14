@@ -1,3 +1,9 @@
+<h1> SQL(Structured Query Language) </h1>
+
+- 구조적인 질의어
+- 질의 언어를 통해 데이터베이스를 제어, 관리
+- DDL(데이터 정의어), DML(데이터 조작어), DCL(데이터 제어어)로 나뉨
+
 <h1> 데이터 정의어(DDL) - Data Definition Language</h1>
 
 - 테이블이나 관계의 구조를 생성하는데 사용하며 CREATE, ALTER, DROP문 등이 있음
