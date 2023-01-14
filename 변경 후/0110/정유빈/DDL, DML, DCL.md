@@ -25,7 +25,7 @@
 
 ![image](https://user-images.githubusercontent.com/62228401/212206086-c537c321-5814-4504-8191-2706f8274275.png)
 
-<h1> 데이터 조작어(DML) </h1>
+<h1> 데이터 조작어(DML) - Data Manipulation Language</h1>
 
 - 데이터를 검색, 삽입, 수정, 삭제하는데 사용하며 SELECT, INSERT, DELETE, UPDATE 문 등이 있음
 - 여기서 SELECT문은 특별히 Query문(질의어)라고 함
@@ -81,7 +81,7 @@ WHERE price >= 10000; [검색 조건]
 
 ![image](https://user-images.githubusercontent.com/62228401/212206837-bf5f8cb8-c317-4bd1-9cc6-da1539c8e819.png)
 
-<h1> 데이터 제어어(DCL) </h1>
+<h1> 데이터 제어어(DCL) - Data Control Language</h1>
 
 - 데이터의 사용 권한을 관리하는데 사용하며 GRANT, REVOKE문 등이 있음
 - 데이터베이스에 접근하여 읽거나 쓰는 것을 제한할 수 있는 권한을 부여하거나 박탈할 수 있고 트랜잭션을 명시하거나 조작할 수 있음
