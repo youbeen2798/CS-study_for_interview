@@ -47,6 +47,11 @@
 
 <h3> 3. Wide Column Database </h3>
 
+- 데이터베이스의 열에 대한 데이터를 집중적으로 관리하는 데이터베이스
+- 각 열에는 Key-Value 형식으로 데이터가 저장되고, 컬럼 패밀리라고 하는 열의 집합체 단위로 데이터를 처리할 수 있다.
+- 하나의 행에 많은 열을 포함할 수 있어 유연성이 높다.
+- 데이터 처리에 필요한 열을 유연하게 선택할 수 있다는 점에 규모가 큰 데이터 분석에 자주 사용되는 데이터베이스 형식이다.
+- Cassandra, HBase 등이 대표적인 예
 - 아래 그림은 Column Familes를 포함하는 Key Space
 ![image](https://user-images.githubusercontent.com/62228401/212222655-17d63698-258f-4f91-85fe-85589659fa9d.png)
 
@@ -74,6 +79,7 @@
 
 - 데이터를 노드로 표현하며, 노드 사이의 관계를 엣지로 표현
 - RDBMS보다 Performance가 좋고 유연하며 유지보수에 용이한 것이 특징
+- Neo4J, InfiniteGraph 등이 대표적인 예
 
 ### NoSQL VS RDBMS
 ![image](https://user-images.githubusercontent.com/58407737/212255829-26851344-df75-483f-b5c5-f728a787d615.png)
