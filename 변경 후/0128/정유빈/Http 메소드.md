@@ -21,7 +21,8 @@
     
  ![image](https://user-images.githubusercontent.com/62228401/214473281-43c5ff24-5698-46c9-b724-01171060c5c4.png)
     
- 
+ <h4> 2. 서버에서는 요청 메시지를 분석해 내부의 유저 정보를 조회한 뒤 결과 Response를 만든다. </h4>
+ ![image](https://user-images.githubusercontent.com/62228401/214473395-9c369483-cf35-4fb1-a1d5-3d083b7dc695.png)
  
 - POST
   - 요청 데이터 처리, 주로 등록에 사용
