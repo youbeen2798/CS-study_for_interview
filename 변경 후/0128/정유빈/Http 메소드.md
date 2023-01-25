@@ -6,6 +6,7 @@
 <h3> 주요 메소드 </h3>
 
 <h4> GET </h4>
+
   - 리소스 조회
   - 서버에 전달하고 싶은 데이터는 "QueryString"을 통해 전달
     - GET/members/100?username=inpa&height=200
