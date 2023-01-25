@@ -25,7 +25,7 @@
 
 ![image](https://user-images.githubusercontent.com/62228401/214473395-9c369483-cf35-4fb1-a1d5-3d083b7dc695.png)
  
- <h4> 3. 서버에서 클라이언트로 응답을 해준다. 그러면 클라이언트에서 정상적으로 받음녀 200 OK status를 가지며, 회원정보를 얻게 된다. </h4>
+ <h4> 3. 서버에서 클라이언트로 응답을 해준다. 그러면 클라이언트에서 정상적으로 받으면 200 OK status를 가지며, 회원정보를 얻게 된다. </h4>
  
  ![image](https://user-images.githubusercontent.com/62228401/214495834-4a184db9-f6ad-4a72-8b83-f60484157fd3.png)
 
