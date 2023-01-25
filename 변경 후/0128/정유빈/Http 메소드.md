@@ -9,6 +9,7 @@
   - 리소스 조회
   - 서버에 전달하고 싶은 데이터는 "QueryString"을 통해 전달
     - GET/members/100?username=inpa&height=200
+  - "QueryString" 외에 메시지 바디를 사용해서 데이터를 전달할 수 있지만, 서버에서 따로 구성해야 하기 때문에, 지원하지 않는 곳이 많아서 권장하지 않음
 - POST
   - 요청 데이터 처리, 주로 등록에 사용
 - PUT
