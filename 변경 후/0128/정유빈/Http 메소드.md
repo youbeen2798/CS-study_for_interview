@@ -16,8 +16,10 @@
  <h3> GET - 정적 데이터 조회 과정 </h3>
  1. 이미지, 정적 텍스트 문서 GET </br>
  2. 쿼리 파라미터 없이 리소스 경로로 단순 조회 가능
-
-
+    
+    <h4> 1. 클라이언트에서 /members/100으로 100번 멤버를 조회해서 정보를 달라고 GET 요청 </h4>
+      ![image](https://user-images.githubusercontent.com/62228401/214473126-9742a6ef-2e08-48b0-8149-9e0b1d1b52a0.png)
+    
  
  
 - POST
