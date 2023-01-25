@@ -19,7 +19,7 @@
     
  <h4> 1. 클라이언트에서 /members/100으로 100번 멤버를 조회해서 정보를 달라고 GET 요청 </h4>
     
-      ![image](https://user-images.githubusercontent.com/62228401/214473281-43c5ff24-5698-46c9-b724-01171060c5c4.png)
+ ![image](https://user-images.githubusercontent.com/62228401/214473281-43c5ff24-5698-46c9-b724-01171060c5c4.png)
     
  
  
