@@ -29,8 +29,32 @@
  
  ![image](https://user-images.githubusercontent.com/62228401/214495834-4a184db9-f6ad-4a72-8b83-f60484157fd3.png)
 
- 
-- POST
+  <h3> GET - 동적 데이터 조회 과정 </h3>
+  
+  1. 주로 검색, 게시판 목록에서 검색어로 이용
+  2. 쿼리 파라미터 사용해서 데이터를 전달
+  3. 쿼리 파라미터는 key1 = value1 & key2 = value2 구조로 되어 있음
+
+  <h4> 요청 url 뒤에 ?q=hello&h2=ko 쿼리 파라미터를 주서 상세한 조회 데이터를 얻는다. </h4>
+  
+  ![image](https://user-images.githubusercontent.com/62228401/214496671-a72beaa2-7936-499d-be34-038f24be9b1c.png)
+
+  <h3> HTML Form 데이터 조회 과정 </h3>
+  
+  1. HTML Form 태그 문서로 사용자와 UI로 상호작용하여 서버와 통신
+  2. HTML Form 전송은 GET, POST만 지원
+
+  <h4> 웹문서에서 폼 입력칸에 데이터를 적고 전송 버튼을 누른다. </h4>
+
+  ![image](https://user-images.githubusercontent.com/62228401/214496987-cf1b9353-5551-4632-ae91-0340f780b57c.png)
+
+  <h4> 지정한 GET 메소드 동작에 따라 input 태그 안에 들어간 값들이 쿼리스트링으로 서버로 전송된다. </h4>
+  
+  ![image](https://user-images.githubusercontent.com/62228401/214497099-bf6a8390-02f1-4138-8269-a8b1d1cb6cdd.png)
+
+  <h2> POST </h2>
+  
+  - 전달한 데이터 처리 / 생성 요청 메소드 (Create)
   - 요청 데이터 처리, 주로 등록에 사용
 - PUT
   - 리소스를 대체(덮어쓰기), 해당 리소스가 없으면 생서 
