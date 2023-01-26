@@ -162,7 +162,7 @@
 
 ![image](https://user-images.githubusercontent.com/62228401/214737622-884b0f53-e0d3-47f7-ac14-a67136e9d21d.png)
 
-<h3> 3. PATCH </h3>
+<h2> 3. PATCH </h2>
 
 - 리소스 일부 부분을 변경하는 메소드(Update)
 - 만일 PATCH를 지원하지 않는 서버에서는 대신에 POST를 사용할 수 있다.
@@ -175,11 +175,48 @@
 
 ![image](https://user-images.githubusercontent.com/62228401/214737909-bdc0e3cb-bdaa-4408-b9a3-7cbdf1ac2286.png)
 
-  - 리소스 부분 변경(PUT이 전체 변경, PATCH는 일부 변경)
-- DELETE
-  - 리소스 삭제
 
-<h3> 기타 메소드 </h3>
+<h2> 4. DELETE </h2>
+
+- 리소스를 제거하는 메소드
+- 상태코드는 대부분 200을 사용하고 상황에 따라 204 사용
+
+<h4> 100번째 멤버를 제거하기 위해 DELETE로 전달한다. </h4>
+
+![image](https://user-images.githubusercontent.com/62228401/214739852-b236efeb-3d9b-4ff2-936f-8e2431d207d8.png)
+
+<h4> 서버에서 요청을 받고 데이터베이스의 해당 리소스를 제거한다. </h4> 
+
+![image](https://user-images.githubusercontent.com/62228401/214739924-4468733b-e16a-4f0a-9f1b-adc42c76bc22.png)
+
+<h2> HTTP 메소드 - HEAD </h2>
+
+- GET과 동일하지만 서버에서 Body를 Return하지 않음
+- Resource를 받지 않고 오직 찾기만 원할 때 사용(응답의 상태코드만 확인할 때)
+- 서버의 응답 헤더를 봄으로써 Resource가 수정 되었는지 확인
+
+![image](https://user-images.githubusercontent.com/62228401/214740181-7164ec78-d7e4-4d76-b9ab-8a44c9daa206.png)
+
+<h2> HTTP 메소드 - TRACE </h2>
+
+- 이 메소드도 일종의 검사용
+- 클라이언트의 요청 패킷이 방화벽, Proxy 서버, Gateway 등을 거치면서 패킷의 변조가 일어날 수 있는데, 이 때 서버에 도달했을 때의 최종 패킷의 요청 패킷 내용을 응답 받을 수 있다.
+- 즉, 요청했던 패킷 내용과 응답 받은 요청 패킷 내용을 비교하여 변조 유무를 확인할 수 있다.
+- 요청의 최종 수신자는 반드시 송신자에게 200(OK) 응답 내용(Body)로 수신한 메시지를 반송해야 한다.
+- 최초 Client 요청에는 Body가 포함될 수 없다.
+  - 리소스 부분 변경(PUT이 전체 변경, PATCH는 일부 변경)
+
+![image](https://user-images.githubusercontent.com/62228401/214741395-8a98a3c6-c986-4019-94c2-10cc24344423.png)
+
+<h2> HTTP 메소드 - OPTION </h2>
+
+- 예비 요청에 사용되는 HTTP  APTHEM
+- 예비 요청이란, 본 요청을 하기 전에 안전한지 먼저 검사하는 것이라고 보면 된다.
+- 서버의 지원 가능한 HTTP 메소드와 출처를 응답받아 CORS 정책을 검사하기 위한 요청이다.
+
+![image](https://user-images.githubusercontent.com/62228401/214741612-646d488d-42a3-4685-9942-cd7be2519072.png)
+
+<h3> 기타 메소드 간단 내용</h3>
 
 - HEAD
   - GET과 동일하지만, 메시지 부분(body 부분)을 제외하고, 상태 줄과 헤더만 반환
