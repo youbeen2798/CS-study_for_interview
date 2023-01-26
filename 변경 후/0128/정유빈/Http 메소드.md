@@ -85,11 +85,11 @@
   2. 회원 가입, 상품 주문, 데이터 변경에 이용
   3. HTML Form 전송은 GET, POST만 지원
 
-1. 웸 문서에서 폼 입력칸에 데이터를 적고 전송 버튼을 누른다.
+<h4> 웹문서에서 폼 입력칸에 데이터를 적고 전송 버튼을 누른다 </h4>
 
-![image](https://user-images.githubusercontent.com/62228401/214732981-9f2e9f3c-3237-4723-af56-66c46820e91f.png)
+![image](https://user-images.githubusercontent.com/62228401/214734548-7f2b0d09-4b1d-49fc-9286-f54538e756cf.png)
 
-2. 지정한 POST 메소드 동작에 따라 input 태그 안에 들어가 값들이 쿼리스트링으로 서버로 전송된다.
+<h4> 2. 지정한 POST 메소드 동작에 따라 input 태그 안에 들어가 값들이 쿼리스트링으로 서버로 전송된다. </h4>
 
 ![image](https://user-images.githubusercontent.com/62228401/214734248-9ccc44ab-c62c-4f3c-adfa-0c7d2996b065.png)
 
@@ -100,6 +100,26 @@
 1. Content-Type: application/x-www-form-urlendcoded
 
   - Form의 내용을 HTTP 메시지 바디를 통해서 전송(key=value, 쿼리 파라미터 형식)
+  - 전송 데이터를 url encoding 처리
+  - ex) abc김 -> abc%EA%B9%80
+
+2. Content-Type : multipart/form-data
+
+  - 파일 업로드 같은 바이너리 데이터 전송 시 사용
+  - 다른 종류의 여러 파일과 Form의 내용 함께 전송 가능. 그래서 이름이 multipart
+
+3. Content-Type : application/json
+
+  - TEXT, XML, JSON 데이터 전송 시 사용
+
+<h3> 파일 데이터 전송 과정 </h3>
+
+1. enctype을 multiparat/form-data로 작성해 해당 폼에 파일이 있다는 것을 표시한다.
+2. 바이너리 데이터 전송 시 사용한다.
+3. multipart/form-data 형식이라면 HTTP 메시지에 임의의 구분자(------XXX)가 Form 데이터간 구분을 지어준다.
+4. 여러 개의 Content-Type에 대한 데이터를 보낼 수 있다.
+
+
 - PUT
   - 리소스를 대체(덮어쓰기), 해당 리소스가 없으면 생서 
 - PATCH
