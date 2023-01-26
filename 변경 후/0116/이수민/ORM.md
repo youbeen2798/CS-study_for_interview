@@ -67,3 +67,8 @@
 ### JPA/Hibernate
 ### Sequelize
 ### Django ORM
+
+![image](https://user-images.githubusercontent.com/58407737/214827849-34254546-c31a-4566-9c2b-5d4f3a34afa5.png)
+![image](https://user-images.githubusercontent.com/58407737/214827929-3a7a117d-5a27-4760-9b29-eac481adf4ad.png)
+
+
