@@ -54,7 +54,7 @@
   ![image](https://user-images.githubusercontent.com/62228401/214497099-bf6a8390-02f1-4138-8269-a8b1d1cb6cdd.png)
 
 
-  <h2> POST </h2>
+  <h2> 2.   POST </h2>
   
   - 전달한 데이터 처리 / 생성 요청 메소드 (Create)
   - 요청 데이터 처리, 주로 등록에 사용
@@ -74,8 +74,8 @@
 
   <h4> 3. 신규회원에 대한 데이터를 바디에 담아서 클라이언트로 응답한다. </h4>
   
-  <h5> 1. 신규 자원 생성은 200이나 201로 응답을 보낸다. </h5>
-  <h5> 2. Location은 자원이 신규로 생성된 URI 경로를 의미한다. </h5>
+    <h5> 1. 신규 자원 생성은 200이나 201로 응답을 보낸다. </h5>
+    <h5> 2. Location은 자원이 신규로 생성된 URI 경로를 의미한다. </h5>
   
   ![image](https://user-images.githubusercontent.com/62228401/214727379-2e4df7cd-4746-4a80-8465-9bbbe699933b.png)
 
@@ -119,10 +119,62 @@
 3. multipart/form-data 형식이라면 HTTP 메시지에 임의의 구분자(------XXX)가 Form 데이터간 구분을 지어준다.
 4. 여러 개의 Content-Type에 대한 데이터를 보낼 수 있다.
 
+![image](https://user-images.githubusercontent.com/62228401/214735587-83cc3167-c236-4186-a962-a931a4b2ffdc.png)
 
-- PUT
-  - 리소스를 대체(덮어쓰기), 해당 리소스가 없으면 생서 
-- PATCH
+<h2> 3. PUT </h3>
+
+- 리소스를 대체(수정)하는 메소드(Update)
+- 만일 요청 메시지에 리소스가 잇으면 덮어쓰고, 없으면 생성한다.
+  - /members/100 데이터가 존재하면 기본의 것을 완전 대체한다.
+  - /members/100 데이터가 없으면 대체할게 없으니까 새로 생성한다.
+
+- 데이터를 대체해야 하니, 클라이언트가 리소스의 구체적인 전체 경로를 지정해 보내주어야 한다.
+  - POST/members : 멤버 새로 추가
+  - POST/members/100 : 100번째 멤버 수정
+
+<h3> PUT 요청에 리소스가 있는 경우 </h3> 
+
+<h4> 1. 100번 유저의 리소스를 교체하겠다는 요청을 보낸다. </h4>
+
+![image](https://user-images.githubusercontent.com/62228401/214736023-67abbbd2-58a3-494f-b40b-6c9bf680713d.png)
+
+<h4> 2. 기존에 데이터가 있었다면 완전히 대체된다. </h4>
+
+![image](https://user-images.githubusercontent.com/62228401/214736129-e48c81ae-fc8f-4c52-8a75-845446ea534a.png)
+
+<h3> PUT 요청에 리소스가 없는 경우 </h3>
+
+<h4> 1. 100번 유저의 리소스를 교체하겠다는 요청을 보낸다. </h4>
+
+![image](https://user-images.githubusercontent.com/62228401/214736259-179ff94b-d16a-48b4-8d30-dbc519bbe235.png)
+
+<h4> 2. 기존에 데이터가 없다면 POST와 같이 신규로 생성한다. </h4>
+
+![image](https://user-images.githubusercontent.com/62228401/214736370-f9359e7a-740a-4db8-8c65-bf293f7d749d.png)
+
+<h3> PUT 요청에 일부 리소스만 변경하길 원할 경우 </h3>
+
+<h4> 1. age만 50으로 변경하려고 해당 데이터를 PUT을 전달한다. </h4>
+
+  ![image](https://user-images.githubusercontent.com/62228401/214737525-7e3f6531-ea11-43ba-8ff3-f3057a59b8a6.png)
+
+<h4> 2. 하지만 기존 데이터가 완전히 대체되어 이름 데이터가 삭제된다. (이 때는 PATCH 메소드를 사용해야 한다.) </h4>
+
+![image](https://user-images.githubusercontent.com/62228401/214737622-884b0f53-e0d3-47f7-ac14-a67136e9d21d.png)
+
+<h3> 3. PATCH </h3>
+
+- 리소스 일부 부분을 변경하는 메소드(Update)
+- 만일 PATCH를 지원하지 않는 서버에서는 대신에 POST를 사용할 수 있다.
+
+<h4> 1. age만 50으로 변경하려고 해당 데이터를 PATCH로 전달한다. </h4>
+
+![image](https://user-images.githubusercontent.com/62228401/214737820-a0aad876-e375-404c-aee2-419308d9b373.png)
+
+<h4> 2. PUT과 다르게 회원 정보에서 age만 변경된다. </h4>
+
+![image](https://user-images.githubusercontent.com/62228401/214737909-bdc0e3cb-bdaa-4408-b9a3-7cbdf1ac2286.png)
+
   - 리소스 부분 변경(PUT이 전체 변경, PATCH는 일부 변경)
 - DELETE
   - 리소스 삭제
