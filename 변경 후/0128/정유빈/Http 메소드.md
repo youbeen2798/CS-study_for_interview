@@ -14,6 +14,7 @@
   - 조회할 때, POST를 사용할 수 있지만, GET 메소드는 캐싱이 가능하기에 GET을 사용하는 것이 유리하다.
  
  <h3> GET - 정적 데이터 조회 과정 </h3>
+ 
  1. 이미지, 정적 텍스트 문서 GET </br>
  2. 쿼리 파라미터 없이 리소스 경로로 단순 조회 가능 </br>
     
@@ -83,8 +84,22 @@
   1. HTML Form 태그 문서로 사용자와 UI로 상호작용하여 서버와 통신
   2. 회원 가입, 상품 주문, 데이터 변경에 이용
   3. HTML Form 전송은 GET, POST만 지원
+
+1. 웸 문서에서 폼 입력칸에 데이터를 적고 전송 버튼을 누른다.
+
 ![image](https://user-images.githubusercontent.com/62228401/214732981-9f2e9f3c-3237-4723-af56-66c46820e91f.png)
 
+2. 지정한 POST 메소드 동작에 따라 input 태그 안에 들어가 값들이 쿼리스트링으로 서버로 전송된다.
+
+![image](https://user-images.githubusercontent.com/62228401/214734248-9ccc44ab-c62c-4f3c-adfa-0c7d2996b065.png)
+
+
+** info **
+<h5> Content-Type 헤더 종류 </h5>
+
+1. Content-Type: application/x-www-form-urlendcoded
+
+  - Form의 내용을 HTTP 메시지 바디를 통해서 전송(key=value, 쿼리 파라미터 형식)
 - PUT
   - 리소스를 대체(덮어쓰기), 해당 리소스가 없으면 생서 
 - PATCH
