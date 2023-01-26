@@ -52,6 +52,11 @@
   
   ![image](https://user-images.githubusercontent.com/62228401/214497099-bf6a8390-02f1-4138-8269-a8b1d1cb6cdd.png)
 
+  <h3> HTML Form 데이터 전송 과정 </h3>
+  
+  1. HTML Form 태그 문서로 사용자와 UI로 상호작용하여 서버와 통신
+  2. 회원 가입, 상품 주문, 데이터 변경에 이용
+  3. HTML Form 전송은 GET, POST만 지원
   <h2> POST </h2>
   
   - 전달한 데이터 처리 / 생성 요청 메소드 (Create)
@@ -76,6 +81,9 @@
   <h5> 2. Location은 자원이 신규로 생성된 URI 경로를 의미한다. </h5>
   
   ![image](https://user-images.githubusercontent.com/62228401/214727379-2e4df7cd-4746-4a80-8465-9bbbe699933b.png)
+
+
+![image](https://user-images.githubusercontent.com/62228401/214732981-9f2e9f3c-3237-4723-af56-66c46820e91f.png)
 
 - PUT
   - 리소스를 대체(덮어쓰기), 해당 리소스가 없으면 생서 
