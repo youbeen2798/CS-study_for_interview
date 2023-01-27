@@ -24,3 +24,13 @@
 <h1> HTTP 1.1 개선방법 </h1>
 
 1. Image Spriting : 웹 페이지를 구성하는 다양한 아이콘 이미지 파일의 요청 횟수를 줄이기 위해 아이콘을 하나의 큰 이미지를 만든 다음 CSS에서 해당 이미지의 좌표 값을 지정하여 표시하는 방법
+2. Domain Sharding : 브라우저들이 HTTP1.1의 단점을 극복하기 위해 여러 개의 Connection을 생성해서 병렬로 요청을 보내기도 한다. 하지만 브라우저 별로 도메인 당 Connection 개수 제한이 존재하기 때문에 근본적인 해결은 어렵다.
+3. Minified CSS/Javascript : HTTP를 통해 전송되는 데이터의 용량을 줄이기 위해 CSS, Javascript를 축소한다. (ex. name.min.js)
+4. Load faster : head 태그에 자바스크립트를 삽입하고, async나 defer 옵션을 사용하여 브라우저의 파싱을 block하지 않고 로드한다.
+5. Data URI Scheme : HTML 문서 내 이미지 리소스를 Base64로 인코딩된 이미지 데이터로 직접 기술하는 방법으로, 서버로의 요청을 줄인다.
+6. 구글의 SPDY : 위에서 언급된 노력들로는 근본적인 단점을 해결할 수 없었다. 그래서 구글은 더 빠른 웹을 실행하기 위해 Throughtput 관점이 아닌 Latency 관점에서 HTTP를 고속화한 SPDY(스피티)라 불리는 새로운 프로토콜을 구현했다. 다만 SPDY는 HTTP를 대체하는 프로토콜이 아니고 HTTP를 통한 전송을 재정의하는 형태로 구현되었다. 이는 HTTP 2.0 초안의 참고 규격이 된다.
+
+<h1> HTTP 2.0 </h1>
+
+HTTP 2.0은 HTTP1.1을 완전하게 재작성한 것이 아니라 프로토콜 성능에 초점을 맞추어 수정한 버전이다.
+특히 End-user가 느끼는 Latency나 네트워크, 서버 리소스 사용량과 같은 성능 위주로 개선되었다.
