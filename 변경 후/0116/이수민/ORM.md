@@ -21,6 +21,13 @@
 - JPA, Hibernate 등
 
 
+</br> </br> </br>
+
+### (예시)
+예를 들어 ORM 프레임워크를 사용하면 객체를 데이터베이스에 저장할 때 INSERT SQL을 직접 작성하는 것이 아니라 객체를 마치 자바 컬렉션에 저장하듯이 ORM 프레임워크에 저장하면 된다. 그러면 ORM 프레임워크가 적절한 INSERT SQL을 생성해서 데이터베이스에 객체를 저장해준다. 
+
+</br> </br> </br>
+
 ## ORM 장점
 
 ### 완벽한 객체지향적인 코드
@@ -60,3 +67,8 @@
 ### JPA/Hibernate
 ### Sequelize
 ### Django ORM
+
+![image](https://user-images.githubusercontent.com/58407737/214827849-34254546-c31a-4566-9c2b-5d4f3a34afa5.png)
+![image](https://user-images.githubusercontent.com/58407737/214827929-3a7a117d-5a27-4760-9b29-eac481adf4ad.png)
+
+
