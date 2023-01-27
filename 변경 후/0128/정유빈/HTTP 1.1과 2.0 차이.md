@@ -49,3 +49,5 @@
 
 - Multiplexed Streams
     - connection 한 개로 동시에 여러 개의 메시지를 주고 받을 수 있으며, 응답은 순서에 상관없이 stream으로 주고 받는다.
+- Stream Prioritization
+    - 
