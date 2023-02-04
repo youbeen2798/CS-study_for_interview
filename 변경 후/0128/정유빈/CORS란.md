@@ -18,3 +18,15 @@
 - CORS가 없이 모든 곳에서 데이터를 요청할 수 있게 되면, 다른 사이트에서 원래 사이트를 흉내낼 수 있게 된다.
 - 예를 들어 기존 사이트와 완전히 동일하게 동작하도록 하여 사용자가 로그인을 하게 만들고, 로그인했던 세션을 탈취하거나 악의적으로 정보를 추출할 수 있다.
 - 이렇게 공격을 할 수 없도록 브라우저에서 보호하고, 필요한 경우에만 서버와 협의하여 요청할 수 있도록 하기 위해 필요하다.
+- 기본적으로 동일 출처 요청만 자유롭게 요청이 가능한 동일 출처 정책을 "Same-Origin-Policy"라고 한다.
+- 하지만 기준을 완화하여 다른 출처 요청도 할 수 있도록 기준을 만든 체제가 다른 출처 정책 "Cross-Origin-Policy"이다.
+
+
+<h3> CORS 요청 정책 3가지 </h3>
+
+<h4> 1.단순요청</h4>
+
+- GET, HEAD, POST만 가능
+- Content-Type 헤더는 application/x-www-form-urlencoded, multipart/form-data, text/plain만 가능
+- 브라우저는 자신의 주소를 origin에 담아 요청을 보내고, 서버는 접근이 가능하다는 access-control-allow-origin에 해당 주소를 담아 보낸다.
+- access-control-allow-origin은 CORS 헤더의 중요 요소 중 하나로 어떤 
