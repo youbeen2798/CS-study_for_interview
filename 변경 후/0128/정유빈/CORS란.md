@@ -29,4 +29,20 @@
 - GET, HEAD, POST만 가능
 - Content-Type 헤더는 application/x-www-form-urlencoded, multipart/form-data, text/plain만 가능
 - 브라우저는 자신의 주소를 origin에 담아 요청을 보내고, 서버는 접근이 가능하다는 access-control-allow-origin에 해당 주소를 담아 보낸다.
-- access-control-allow-origin은 CORS 헤더의 중요 요소 중 하나로 어떤 
+- access-control-allow-origin은 CORS 헤더의 중요 요소 중 하나로 어떤 요청을 허용할지 결정한다.
+- 이 헤더 값은 하나의 출처가 될 수 있고, "*" 를 사용해 어떤 출처도 허용할 수 있다.
+- 만약 서버가 이 헤더에 응답하지 않거나, 헤더 값이 요청의 출처와 일치하지 않다면, 브라우저는 응답을 차단한다.
+- 또한 요청한 출처가 서버의 access-control-allow-origin에 포함되어 있는 경우도 마찬가지이다.
+
+<h4> 2. 프리 플라이트(Preflight Request) </h4>
+
+- OPTIONS 메소드로 HTTP 요청을 미리 보내 실제 요청이 전송하기에 안전한지 확인한다.
+- 다른 출처 요청이 데이터에 영향을 줄 수 있기 때문에 미리 전송한다.
+- 요청 헤더에는 다음 값이 포함된다.
+- 1. origin : 어디서 요청을 했는지 서버에 알려주는 주소
+- 2. access-control-request-method : 실제 요청이 보낼 HTTP 메소드
+- 3. access-control-request-headers : 실제 요청에 포함된 header
+
+- 응답 헤더는 다음 값이 포함된다.
+- 1. access-control-allow-origin : 서버가 허용하는 출처
+- 2. access-control-allow-methods : 서버가 허용한
