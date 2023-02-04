@@ -58,4 +58,4 @@
 - 신용 요청은 쿠키, 인증 헤더, TLS 클라이언트 인증서 등의 신용정보와 함께 요청을 합니다.
 - 기본적으로 CORS 정책은 다른 출처 요청에 인증 정보 포함을 허용하지 않습니다.
 - 요청에 인증을 포함하는 플래그가 있거나 access-control-allow-credentials가 true로 설정한다면 요청할 수 있습니다.
-- aksdi
+- 만약 서버의 응답에 access-control-allow-credentials가 true로 설정되지 않았거나 access-control-allow-origin 헤더에 있는 값이 허용된 출처가 아니라면 오류가 발생한다.
