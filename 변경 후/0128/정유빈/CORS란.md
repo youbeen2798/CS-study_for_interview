@@ -45,4 +45,13 @@
 
 - 응답 헤더는 다음 값이 포함된다.
 - 1. access-control-allow-origin : 서버가 허용하는 출처
-- 2. access-control-allow-methods : 서버가 허용한
+- 2. access-control-allow-methods : 서버가 허용하는 HTTP 메소드 리스트
+- 3. access-control-allow-headers : 서버가 허용하는 header 리스트
+- 4. access-control-max-age : 프리 플라이트 요청의 응답을 캐시에 저장하는 시간
+
+- 프리 플라이트 요청은 OPTIONS를 통해 자신의 주소를 보낸다.
+- 또한 origin, access-control-request-method, access-control-request-headers를 같이 보낸다.
+- 정상적인 응답으로 access-control-allow-origin, access-control-allow-method, access-control-allow-headers, access-control-max-age를 응답받는다.
+- 정상 요청과 응답이 가능하다는 프리 플라이트 덕분에 실제 요청을 한다. 그리고 정상 응답을 받는다.
+
+<h4> 신용 요청(Credentialed Request) </h4>
