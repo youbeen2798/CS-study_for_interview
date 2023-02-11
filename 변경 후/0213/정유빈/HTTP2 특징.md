@@ -70,7 +70,7 @@
 
 - HTTP/2는 기존 HTTP/1과의 호환성을 유지하며 성능에 초점을 맞춘 프로토콜이다.
 
-<h3> multiplexed Streams </h3>
+<h3> 바뀐 점 1. multiplexed Streams </h3>
 
 - HTTP/2는 하나의 TCP 연결을 통해 여러 데이터 요청을 병렬로 전송할 수 있습니다.
 
@@ -80,7 +80,7 @@
 - RTT 시간이 줄어들어 별도의 최적화 과정이나 도메인 샤딩 없이 웹 사이트 로드 속도가 빨라집니다.
 - HTTP/1.1의 Connection Keep-Alive, Pipelining이 개선된 것을 알 수 있습니다.
 
-<h3> Header Compression </h3>
+<h3> 바뀐 점 2. Header Compression </h3>
 
 - HTTP/2는 중복 헤더 프레임을 압축해서 전송합니다.
 - HPACK 규격을 사용하여, 클라이언트와 서버에서 모두 이전 요청에 사용된 헤더 목록을 유지관리합니다.
@@ -88,3 +88,4 @@
 
 ![image](https://user-images.githubusercontent.com/62228401/218255506-d6a14c44-d518-4d47-a2d3-2b648092da37.png)
 
+- 모바일과 같이 업로드 대역폭이 상대적으로 작은 경우에는 이런 HTTP 헤더 압축 방법이 특히 유용한데, 오늘날의 HTTP 헤더는 평균 2KB 가량이고, 점점 더 커지는 추세이기 때문에 HTTP 헤더 압축의 가치는 앞으로 더 커질 것이라고 한다.
