@@ -26,3 +26,16 @@
 <h1> HTTP/1.1 동작 원리 </h1>
 
 ![image](https://user-images.githubusercontent.com/62228401/218254784-c5599da3-fd5d-4174-9942-938de8331a49.png)
+
+- 왼쪽은 HTTP/1.1 Baseline 통신 규약이고, 오른쪽이 바로 Pipelining 기능이 도입된 HTTP/1.1 통신 과정입니다.
+- HTTP/1.1 동작은 기본적으로 Connection 한 개당 하나의 요청을 처리하도록 설계되어있습니다.
+- 동시 전송이 불가능하고 요청과 응답이 순차적으로 이루어집니다.
+- 그래서, 이미지 세 개를 요청한다고 하면 아래와 같습니다.
+
+![image](https://user-images.githubusercontent.com/62228401/218254860-142fea53-45bb-4d13-8386-9bdb2bb59e0d.png)
+
+- 또, HTML 문서 안에 포함된 다수의 리소스(Images, CSS, Script)를 처리하려면 요청할 리소스 개수에 비해서 Latency(대기 시간)은 길어지게 됩니다.
+
+<h1> HTTP/1.1 단점 </h1>
+
+<h3> 단점 1. HOL Blocking </h3>
