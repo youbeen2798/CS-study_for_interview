@@ -46,4 +46,5 @@
 
 - 맨 처음, 사용자가 HTTP 요청의 Body에 인증 정보(유저 이름이나 패스워드)를 실어 서버에 보낸다.
 - 서버에서는 해당 인증 정보가 유효하면 사용자와 데이터를 식별하는 <b> Session ID </b>를 생성한다.
-- 생성된 Session ID는 <b> Set-Cookie </b> 헤더에 생성된 세션 아이디를 실어 보낸다.
+- 생성된 Session ID는 <b> Set-Cookie </b> 헤더에 생성된 Session ID를 실어 보낸다.
+- 클라이언트는 해당 Session ID를 쿠키에 저장하고, 매 요청마다 Session ID를 Cookie 헤더에 실어 전송한다.
