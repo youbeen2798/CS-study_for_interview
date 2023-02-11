@@ -134,8 +134,13 @@
 - 따라서, 유저의 수가 얼마나 되던 서버의 부담이 증가하지 않는다.
 - 따라서 서버의 부담 측면에서는 세션 기반 인증 방식보다는 토큰 기반 인증 방식이 조금 더 유리함을 알 수 있다.
 
+<h1> 한 눈에 보는 세션, 토큰 동작 방식 </h1>
 
+<h4> 세션 </h4>
 
+![image](https://user-images.githubusercontent.com/62228401/218254091-9cc900d6-364f-41c1-97de-04ad5f180a88.png)
 
+<h4> 토큰 </h4>
 
+![image](https://user-images.githubusercontent.com/62228401/218254099-bd696420-ccff-48b5-be06-adbb929286b5.png)
 
