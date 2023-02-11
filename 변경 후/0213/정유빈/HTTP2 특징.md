@@ -66,10 +66,25 @@
 - 웹 환경이 계속 바뀌면서(리소스 증가, 다수의 도메인, 동적 웹 서비스, 보안의 중요성 대두 등) 구글은 latency 문제의 해결을 집중하며 HTTP를 고속화한 새로운 프로토콜인 SPDY를 구현하였다.
 - 이는 HTTP/2의 참고 규격이다.
 
-<h2> HTTP/2 </h2>
+<h1> HTTP/2 </h1>
 
 - HTTP/2는 기존 HTTP/1과의 호환성을 유지하며 성능에 초점을 맞춘 프로토콜이다.
 
 <h3> multiplexed Streams </h3>
 
 - HTTP/2는 하나의 TCP 연결을 통해 여러 데이터 요청을 병렬로 전송할 수 있습니다.
+
+![image](https://user-images.githubusercontent.com/62228401/218255373-49a7de38-a8c1-4f1b-924e-443a37feda2f.png)
+
+- HTTP/2는 Multiplexed Streams를 이용하여 Connection 한 개로 동시에 여러 개의 메시지를 주고 받을 수 있으며 응답은 순서에 상관없이 Stream으로 주고 받습니다.
+- RTT 시간이 줄어들어 별도의 최적화 과정이나 도메인 샤딩 없이 웹 사이트 로드 속도가 빨라집니다.
+- HTTP/1.1의 Connection Keep-Alive, Pipelining이 개선된 것을 알 수 있습니다.
+
+<h3> Header Compression </h3>
+
+- HTTP/2는 중복 헤더 프레임을 압축해서 전송합니다.
+- HPACK 규격을 사용하여, 클라이언트와 서버에서 모두 이전 요청에 사용된 헤더 목록을 유지관리합니다.
+- HPACK은 서버로 전송되기 전에 각 헤더의 개별 값을 압축한 다음 이전에 전송된 헤더 값 목록에서 인코딩된 정보를 조회하여 전체 헤더 정보를 재구성합니다.
+
+![image](https://user-images.githubusercontent.com/62228401/218255506-d6a14c44-d518-4d47-a2d3-2b648092da37.png)
+
