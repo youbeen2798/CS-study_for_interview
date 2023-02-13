@@ -142,7 +142,10 @@ Server Push는 **브라우저에서 필요한 리소스들을 서버가 알아�
 
 그래서 HTML 태그에서 필요한 리소스가 뭔지 찾기 전에, HTML 태그를 받은 즉시, 리소스 (CSS,JS,IMAGE)를 페이지에 그릴 수 있게 되었다. </br>
 
-
-
+</br>
+</br>
+</br>
+https://americanopeople.tistory.com/115 </br>
+https://www.popit.kr/%EB%82%98%EB%A7%8C-%EB%AA%A8%EB%A5%B4%EA%B3%A0-%EC%9E%88%EB%8D%98-http2/
 
 
