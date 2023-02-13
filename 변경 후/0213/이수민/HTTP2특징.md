@@ -8,8 +8,6 @@ HTTP 보다 HTTPS가 더 빠르다(?)
 </br></br>
 해당 논쟁으로 이해-> https://okky.kr/articles/480266 </br></br>
 
-https://americanopeople.tistory.com/115
-
 HTTP/2는 2015년 05월에 공개 -> HTTP 1.1 발표는 1997년도 </br>
 
 그 사이에 웹 처리되는 방식이 많이 바뀜 </br>
