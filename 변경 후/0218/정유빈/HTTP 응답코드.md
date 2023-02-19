@@ -143,3 +143,10 @@
 
 ![image](https://user-images.githubusercontent.com/62228401/219945827-d80ebc2c-01b8-4a04-a396-f93cb99a26ed.png)
 
+<h3> 307 Temporary Redirect vs 308 Permanent Redirect </h3>
+
+- 307은 302와 유사하고, 308은 301과 유사하다.
+- 301과 302는 redirect 시킬 때 method를 get으로 바꿔서 전송한다.
+- 따라서 get 요청을 보낼 때는 문제가 없지만 post 메소드를 요청했을 때 문제가 발생할 수 있다.
+- http 프로토콜을 통해 post 메소드로 날라온게 https 프로토콜을 통해 get 메소드로 변경되면서 컨트롤러나 라우터에 매핑되는 URI가 없어서 오류가 나게 된다.
+- 따라서, 301 대신에 308을, 302 대신에 307을 쓰면 좀 더 안전하게 redirect 시킬 수 있다.
