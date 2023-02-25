@@ -96,3 +96,8 @@
 
 ![image](https://user-images.githubusercontent.com/62228401/221327340-428fdf2a-0feb-47a5-acf2-15ddecf19c53.png)
 
+- PAR을 사용하는 기기는 ACK를 받을 때까지 데이터 유닛을 재전송한다.
+- 수신자가 데이터 유닛(세그먼트)이 손상된 것을 확인하면(Error Detection에 사용되는 transport layer의 Checksum을 활용), 해당 세그먼트를 없앤다.
+- 그러면 sender는 positive ACK가 오지 않은 데이터 유닛을 다시 보내야 한다.
+- 이 과정에서 클라이언트와 서버 사이에서 3개의 Segment가 교환되는 것을 확인할 수 있다.
+- 이것이 바로 3-Way handshake의 기본 매커니즘이다.
