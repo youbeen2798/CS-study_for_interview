@@ -76,4 +76,7 @@
     - 즉, 해당 위치의 bit가 1이면 해당 패킷이 어떠한 내용을 담고 있는 패킷이즐 나타낸다.
   - SYN(Synchronize Sequence Number) / 000010
     - 연결 설정. Sequence Number를 랜덤으로 설정하여 세션을 연결하는 데 사용하며, 초기에 Sequence Number를 전송한다.
-  - ACK(Ack
+  - ACK(Acknowledgement) / 010000
+    - 응답 확인. 패킷을 받았다는 것을 의미한다.
+    - Acknowledgement Number 필드가 유효한지를 나타낸다.
+    - 양
