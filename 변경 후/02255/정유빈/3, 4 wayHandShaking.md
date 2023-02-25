@@ -71,3 +71,8 @@
   - ESTABLISHED : 포트 연결 상태
 
 - <h1> 플래그 정보 </h1>
+  - TCP Header에는 CONTROL BIT(플래그 비트, 6bit)가 존재하며, 각각의 bit는 "URG-ACK-PSH-RST-SYN-FIN"의 의미를 가진다.
+    - 즉, 해당 위치의 bit가 1이면 해당 패킷이 어떠한 내용을 담고 있는 패킷이즐 나타낸다.
+  - SYN(Synchronize Sequence Number) / 000010
+    - 연결 설정. Sequence Number를 랜덤으로 설정하여 세션을 연결하는 데 사용하며, 초기에 Sequence Number를 전송한다.
+  - ACK(Ack
