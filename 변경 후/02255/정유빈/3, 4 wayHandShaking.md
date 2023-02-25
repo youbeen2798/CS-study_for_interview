@@ -31,6 +31,8 @@
 - UDP보다 속도가 느리다.
 - 전이중(Full-Duplex), 점대점(Point to Point) 방식
 
+![image](https://user-images.githubusercontent.com/62228401/221325966-8d575834-8494-4103-9316-f090c3405444.png)
+
 <h1> UDP(User Datagram Protocol) </h1>
 
 - 데이터를 데이터그램 단위로 처리하는 프로토콜(데이터그램이란 독립적인 관계를 지니는 패킷이라는 뜻)
@@ -47,3 +49,6 @@
 - UDP 헤더의 CheckSum 필드를 통해 최소한의 오류만 검출한다.
 - 신뢰성이 낮다.
 - TCP보다 속도가 빠르다.
+
+![image](https://user-images.githubusercontent.com/62228401/221325991-43c5f714-ad56-4e44-890e-d4a7d1275dc6.png)
+
