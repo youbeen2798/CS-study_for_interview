@@ -132,4 +132,12 @@
   
   <h3> Step 3 </h3>
   
-  - <b> 클라이언트는 서버의 응답인 ACK(x+1)
+  - <b> 클라이언트는 서버의 응답인 ACK(x+1)와 SYN(y) 패킷을 받고, ACK(y+1)을 서버로 보냄
+  
+    - 마지막으로 접속 요청 프로세스 P가 수락 확인을 보내 연결을 맺음(ACK)
+    - 이 때, 전송할 데이터가 있으면 이 단계에서 데이터를 전송할 수 있다.
+    - PORT 상태
+      - Client : ESTABLISHED
+      - Server : SYN_RCV -> ACK -> ESTABLISHED
+  
+
