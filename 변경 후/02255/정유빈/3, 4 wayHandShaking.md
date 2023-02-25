@@ -121,6 +121,15 @@
     - Client : CLOSED - SYN_SENT로 변함
     - Server : Listen
   
-  <h3> Step 2 </h3>
+<h3> Step 2 </h3>
 
-  - <b> 서버가 SYN(x)를 받고, 클라이언트로 받았다는 신호인 ACK
+  - <b> 서버가 SYN(x)를 받고, 클라이언트로 받았다는 신호인 ACK와 SYN 패킷을 보냄(seq : y, ACK : x + 1) </b>
+    - 접속 요청을 받은 Q가 요청을 수락했으며, 접속 요청 프로세스인 P도 포트를 열어달라는 메시지를 전송(SYN-ACK signal bits set)
+  - ACK Number 필드를 Sequence Number + 1로 지정하고 SYN과 ACK 플래그 비트를 1로 설정한 세그먼트 전송(Seq = y, Ack = x + 1, SYN, ACK)
+  - Port 상태
+    - Client : CLOSED
+    - Server : SYN_RCV
+  
+  <h3> Step 3 </h3>
+  
+  - <b> 클라이언트는 서버의 응답인 ACK(x+1)
