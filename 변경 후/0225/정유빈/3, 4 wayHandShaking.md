@@ -159,7 +159,7 @@
   
   - TCP는 대부분의 connection-oriented 프로토콜과 같은 2가지 연결 해제 방식이 있다.
   
-  <b> 1. Grateful connection release(정상적인 연결 해제) </b>
+  <b> 1. Graceful connection release(정상적인 연결 해제) </b>
   - 정상적인 연결 해제에서는 양쪽이 커넥션이 서로 모두 커넥션을 닫을 때까지 연결되어 있다.
   <b> 2. Abrupt connection release(갑작스러운 연결 해제) </b>
   - 1. 갑자기 한 TCP 엔티티가 연결을 강제로 닫는 경우
