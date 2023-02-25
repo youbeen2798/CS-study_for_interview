@@ -57,3 +57,15 @@
 - UDP와 TCP는 각각 별도의 포트 주소 공간을 관리하므로 같은 포트 번호를 사용해도 무방하다.
 - 즉, 두 프로토콜에서 동일한 포트 번호를 할당해도 서로 다른 포트로 간주한다.
 - 또한 같은 모듈(UDP or TCP) 내에서도 클라이언트 프로그램에서 동시에 여러 커넥션을 확립한 경우에는 서로 다른 포트 번호를 동적으로 할당한다. (동적할당에 사용되는 포트번호는 49,152 ~ 65,535이다.)
+
+![image](https://user-images.githubusercontent.com/62228401/221326276-eab04c75-dad4-4935-b7d6-2e2980dc656b.png)
+
+<h1> 3-Way Handshake와 4-Way Handshake </h1>
+
+- 3-Way Handshake는 TCP의 접속, 4-Way Handshake는 TCP의 접속 해제 과정이다.
+
+- 포트(PORT) 상태 번호
+  - CLOSED : 포트가 닫힌 상태
+  - LISTEN : 포트가 열린 상태로 연결 요청 대기 중
+  - SYN-RCV : SYNC 요청을 받고 상대방의 응답을 기다리는 중
+  - ESTABLISHED : 포트 연결 상태
