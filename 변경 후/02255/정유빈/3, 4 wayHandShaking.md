@@ -115,11 +115,11 @@
 
 <h3> Step 1 <h3>
   
-  - <b> 클라이언트는 서버와 커넥션을 연결하기 위해 SYN을 보낸다.(seq : X) 
+  - <b> 클라이언트는 서버와 커넥션을 연결하기 위해 SYN을 보낸다.(seq : X)  </b>
     - 송신자가 최초로 데이터를 전송할 때 Sequence Number를 임의의 랜덤 숫자로 지정하고, SYN 플래그 비트를 1로 설정한 세그먼트를 전송한다.
   - PORT 상태
     - Client : CLOSED - SYN_SENT로 변함
-   - Server : Listen </b>
+   - Server : Listen 
   
 <h3> Step 2 </h3>
 
@@ -140,4 +140,20 @@
       - Client : ESTABLISHED
       - Server : SYN_RCV -> ACK -> ESTABLISHED
   
-
+  <h3> full - duplex 통신의 구성 </h3>
+  
+  - Step 1, 2에서는 P -> Q 방향에 대한 연결 파라미터(시퀀스 번호)를 설정하고, 이를 승인한다.
+  - Step 2, 3에서는 Q -> P 방향에 대한 연결 파라미터(시퀀스 번호)를 설정하고, 이를 승인한다.
+  
+  => 이를 통해 full-duplex 통신이 구축된다.
+  
+  
+  <h1> TCP의 4-Way Handshake </h1>
+  
+  - 4-Way Handshake은 연결을 해제(Connection Termination)하는 과정이다.
+  - 여기서 FIN 플래그를 이용한다.
+    - FIN (finish) : 세션을 종료시키는데 사용되며, 더 이상 보낸 데이터가 없음을 나타낸다.
+  
+  <h4> Termination 종류 </h4>
+  
+  - TCP는 대부분의 
