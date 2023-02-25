@@ -67,6 +67,7 @@
 - <h3> 포트(PORT) 상태 번호 </h3>
 
   - CLOSED : 포트가 닫힌 상태
+  - SYN-SET : SYN 플래그를 보내고 기다리는 중
   - LISTEN : 포트가 열린 상태로 연결 요청 대기 중
   - SYN-RCV : SYNC 요청을 받고 상대방의 응답을 기다리는 중
   - ESTABLISHED : 포트 연결 상태
