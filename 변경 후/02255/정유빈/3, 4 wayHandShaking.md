@@ -101,3 +101,9 @@
 - 그러면 sender는 positive ACK가 오지 않은 데이터 유닛을 다시 보내야 한다.
 - 이 과정에서 클라이언트와 서버 사이에서 3개의 Segment가 교환되는 것을 확인할 수 있다.
 - 이것이 바로 3-Way handshake의 기본 매커니즘이다.
+
+<h1> 작동 방식 </h1>
+
+- Client는 Server와 연결하기 위해 3-way Handshake를 통해 연결 요청을 하게 된다.
+- 우리가 일반적으로 생각하는 Client와 Server는 모두 서로 연결 요청을 먼저 할 수 있기 때문에, 연결 요청을 먼저 시도한 요청자를 Client(아래 그림에서 HOST P)로, 연결 요청을 받은 수신자를 Server(아래 그림에서 HOST Q) 쪽으로 생각할 수 있다.
+- 
