@@ -116,10 +116,11 @@
 <h3> Step 1 <h3>
   
   - <b> 클라이언트는 서버와 커넥션을 연결하기 위해 SYN을 보낸다.(seq : X)  </b>
+  
     - 송신자가 최초로 데이터를 전송할 때 Sequence Number를 임의의 랜덤 숫자로 지정하고, SYN 플래그 비트를 1로 설정한 세그먼트를 전송한다.
   - PORT 상태
     - Client : CLOSED - SYN_SENT로 변함
-   - Server : Listen 
+     - Server : Listen 
   
 <h3> Step 2 </h3>
 
