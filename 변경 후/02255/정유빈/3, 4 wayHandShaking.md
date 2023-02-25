@@ -115,20 +115,20 @@
 
 <h3> Step 1 <h3>
   
-  - <b> 클라이언트는 서버와 커넥션을 연결하기 위해 SYN을 보낸다.(seq : X) </b>
+  - <b> 클라이언트는 서버와 커넥션을 연결하기 위해 SYN을 보낸다.(seq : X) 
     - 송신자가 최초로 데이터를 전송할 때 Sequence Number를 임의의 랜덤 숫자로 지정하고, SYN 플래그 비트를 1로 설정한 세그먼트를 전송한다.
   - PORT 상태
     - Client : CLOSED - SYN_SENT로 변함
-    - Server : Listen
+   - Server : Listen </b>
   
 <h3> Step 2 </h3>
 
-  - <b> 서버가 SYN(x)를 받고, 클라이언트로 받았다는 신호인 ACK와 SYN 패킷을 보냄(seq : y, ACK : x + 1) </b>
+  - <b> 서버가 SYN(x)를 받고, 클라이언트로 받았다는 신호인 ACK와 SYN 패킷을 보냄(seq : y, ACK : x + 1) 
     - 접속 요청을 받은 Q가 요청을 수락했으며, 접속 요청 프로세스인 P도 포트를 열어달라는 메시지를 전송(SYN-ACK signal bits set)
   - ACK Number 필드를 Sequence Number + 1로 지정하고 SYN과 ACK 플래그 비트를 1로 설정한 세그먼트 전송(Seq = y, Ack = x + 1, SYN, ACK)
   - Port 상태
     - Client : CLOSED
-    - Server : SYN_RCV
+    - Server : SYN_RCV </b>
   
   <h3> Step 3 </h3>
   
