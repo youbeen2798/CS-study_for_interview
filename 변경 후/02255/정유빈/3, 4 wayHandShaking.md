@@ -105,5 +105,11 @@
 <h1> 작동 방식 </h1>
 
 - Client는 Server와 연결하기 위해 3-way Handshake를 통해 연결 요청을 하게 된다.
-- 우리가 일반적으로 생각하는 Client와 Server는 모두 서로 연결 요청을 먼저 할 수 있기 때문에, 연결 요청을 먼저 시도한 요청자를 Client(아래 그림에서 HOST P)로, 연결 요청을 받은 수신자를 Server(아래 그림에서 HOST Q) 쪽으로 생각할 수 있다.
-- 
+- 우리가 일반적으로 생각하는 Client와 Server는 모두 서로 연결 요청을 먼저 할 수 있기 때문에, 연결 요청을 먼저 시도한 요청자를 Client(아래 그림에서 HOST P)로, 연결 요청을 받은 수신자를 Server(아래 그림에서 HOST Q)로 생각할 수 있다.
+- <b> SYN(Synchornization) </b> : 연결 요청, 세션을 설정하는데 사용되며 초기에 시퀀스 번호를 보냄
+- <b> ACK(Acknowledgement) </b> : 보낸 시퀀스 번호에 TCP 계층에서의 길이 또는 양을 더한 것과 같은 값을 ACK에 포함하여 전송
+  - 동기화 요청에 대한 답변 : Client의 Sequence Number에 1을 더하여 ACK로 돌려줍니다.
+
+![image](https://user-images.githubusercontent.com/62228401/221327864-0fd7da67-cefb-4a05-9cb5-6dceb2a1bd67.png)
+
+
