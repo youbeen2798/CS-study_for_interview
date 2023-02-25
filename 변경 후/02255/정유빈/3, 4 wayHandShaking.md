@@ -87,4 +87,12 @@
 <h1> TCP의 3-Way Handshake </h1>
 
 - TCP 통신을 이용하여 데이터를 전송하기 위해 네트워크 <b> 연결을 설정(Connection Establish) </b> 하는 과정
-- 양쪽 모두 데이터를 전송할 준비가 되었다는 
+- 양쪽 모두 데이터를 전송할 준비가 되었다는 것을 보장하고, 실제로 데이터 전달이 시작하기 전에 한 쪽이 다른 쪽이 준비되었다는 것을 알 수 있도록 한다.
+- 즉, TCP/IP 프로토콜을 이용해서 통신을 하는 응용 프로그램이 데이터를 전송하기 전에 먼저 정확한 전송을 보장하기 윙해 상대방 컴퓨터와 사전에 세션을 수립하는 과정을 의미한다.
+
+<h3> 3-Way handshake의 기본 매커니즘 </h3>
+
+- TCP 통신은 <b> PAR(Positive Acknowledgement with Re-transmission) </b>을 통해 신뢰적인 통신을 제공한다.
+
+![image](https://user-images.githubusercontent.com/62228401/221327340-428fdf2a-0feb-47a5-acf2-15ddecf19c53.png)
+
