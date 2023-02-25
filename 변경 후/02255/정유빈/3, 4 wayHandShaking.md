@@ -64,13 +64,14 @@
 
 - 3-Way Handshake는 TCP의 접속, 4-Way Handshake는 TCP의 접속 해제 과정이다.
 
-- <h1> 포트(PORT) 상태 번호 </h1>
+- <h3> 포트(PORT) 상태 번호 </h3>
+
   - CLOSED : 포트가 닫힌 상태
   - LISTEN : 포트가 열린 상태로 연결 요청 대기 중
   - SYN-RCV : SYNC 요청을 받고 상대방의 응답을 기다리는 중
   - ESTABLISHED : 포트 연결 상태
 
-- <h1> 플래그 정보 </h1>
+- <h3> 플래그 정보 </h3>
 
   - TCP Header에는 CONTROL BIT(플래그 비트, 6bit)가 존재하며, 각각의 bit는 "URG-ACK-PSH-RST-SYN-FIN"의 의미를 가진다.
     - 즉, 해당 위치의 bit가 1이면 해당 패킷이 어떠한 내용을 담고 있는 패킷이즐 나타낸다.
