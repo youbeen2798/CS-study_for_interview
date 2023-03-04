@@ -164,3 +164,5 @@
   - 또한 프로세스 간의 통신(IPC)보다 스레드 간의 통신 비용이 적으므로 작업들 간의 통신 부담이 줄어든다. (스레드는 Stack 영역을 제외한 모든 메모리를 공유하기 때문)
   - 프로세스 간의 전환 속도보다 스레드 간의 전환 속도가 빠르다.(Context Switching 시 스레드는 Stack 영역만 처리하기 때문)
 
+![image](https://user-images.githubusercontent.com/62228401/222873078-8cdc3a2e-0fdf-4d32-9074-e632ad86550b.png)
+
