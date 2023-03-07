@@ -58,3 +58,8 @@
 ![image](https://user-images.githubusercontent.com/62228401/223290800-26b82eac-7f5a-4881-a84f-459316bcfced.png)
 
 - Direct I/O(DMA 미사용) - Data I/O 처리 시 완료까지 작업 중지, CPU 대기 필요
+
+<h3> 사이클스틸링(Cycle Stealing)이란? </h3>
+
+- DMA 컨트롤러와 CPU가 동시에 Bus를 사용하고자 할 때 속도가 빠른 CPU가 속도가 느린 DMA에게 Bus 사용 우선순위를 주어 빠른 입출력이 가능하게 하는 방법이다.
+- 한 번의 DMA 동작 중 한 Word 정도의 데이터를 전송시 적용한다.
