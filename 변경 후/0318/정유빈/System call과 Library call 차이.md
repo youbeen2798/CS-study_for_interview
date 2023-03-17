@@ -42,3 +42,20 @@
 - 헤더 파일에 예를 들면, stdio.h 헤더 파일에는 입력 및 출력 조작을 수행하는 다양한 기능이 포함되어 있습니다.
 - fopen()은 파일을 여는데 사용되는 반면, fclose()는 파일을 닫는데 사용됩니다.
 - printf() 기능은 형식화된 출력을 표준 출력 장치로 보낼 수 있고, scanf() 기능은 표준 입력 장치에서 형식화된 입력할 수 있습니다.
+<br />
+- 또한 "math.h" 헤더 파일에는 수학 연산을 수행하는 기능이 포함되어 있습니다.
+- "time.h" 헤더 파일에는 시간 및 데이터 계산을 수행하는 기능이 포함되어 있습니다.
+- "string.h" 헤더 파일에는 문자열 조작을 수행하는 기능이 있습니다.
+
+
+<h2> System call과 Library call 차이 </h2>
+
+- System call은 자원에 Access하기 위해 커널 모드로 들어가기 위해 프로그램 커널에 요청한 반면, Library Call은 프로그램이 프로그래밍 라이브러리에 정의된 기능에 Access하기 위한 요청입니다.
+<br />
+- UNIX / LINUX의 Manul은 명령어 man(manual)을 통해서 제공되고 있으며, manual의 영역에 따라 Section 번호를 제공합니다. 
+
+<h3> read() / write() 및 fread() / fwrite() 비교 </h3>
+
+- Library Call을 사용하더라도 내부적으로 System Call을 사용합니다.
+- fread() / fwrite()의 경우 내부적으로 Buffer에 데이터를 쌓았다가 일정 크기 이상이 되면 read() / write()를 실행합니다.
+- read() / write()와 같은 System Call을 사용하는 것보다 fread() / fwrite() 와 같이 Library Call을 사용함으로써, System Call의 호출 빈도가 확연하게 줄어드는 것을 알 수 있습니다.
