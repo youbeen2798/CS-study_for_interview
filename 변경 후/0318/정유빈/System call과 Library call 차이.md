@@ -109,3 +109,8 @@ int main() {
 
 - System call은 프로그램 내부에서 메모리를 할당 및 해제하지 않는다.
 - Library call Function은 내부에서 메모리를 할당하여 return 한다.
+
+3. System call 대체 함수
+
+- 시스템 콜 : File I/O를 위한 함수로서 File에서 read/write를 호출할 때마다 Kernel I/O가 발생하며 바로바로 파일에 기록된다.
+- 라이브러리 콜 : File에 read/write 시에 특정 size의 데이터가 모일 때까지 read/write를 하지 않고 buffer 크기를 벗어날 때에 내부적으로 read / write를 한 번만 실행하여 resource를 효율적으로 사용하게 된다.
