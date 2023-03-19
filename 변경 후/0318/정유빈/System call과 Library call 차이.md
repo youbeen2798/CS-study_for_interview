@@ -97,3 +97,15 @@ int main() {
 - 커널(kernel)은 운영체제의 중심으로, 컴퓨터를 구성하는 모든 하드웨어와 소프트웨어를 관리한다.
 - 커널의 중요한 역할은 컴퓨터의 하드웨어을 관리하는 것이다.
 - 프로그램이 커널에 디바이스 조작 작업을 의뢰하기 위해 사용하는 것을 시스템 콜(system call)이라고 한다.
+
+<h1> System call / Library call 차이 </h1>
+
+1. Return type
+
+- 시스템 콜 : 오류는 -1, 성공은 0 또는 1임
+- Library call : 목적에 따라 다양
+
+2. 메모리 할당 여부
+
+- System call은 프로그램 내부에서 메모리를 할당 및 해제하지 않는다.
+- Library call Function은 내부에서 메모리를 할당하여 return 한다.
