@@ -239,4 +239,61 @@ thread2 unlock
 ```
 - 다른 인스턴스에 접근했지만 lock이 발생한 것을 확인할 수 있습니다.
 - 즉, 다른 인스턴스라도 static 메소드에 synchronzied가 붙은 경우 lock을 공유하는 것을 확인할 수 있다.
-- 
+
+<h1> 동기화 순서 </h1>
+
+- synchronized를 통해 lock을 물고 있을 때 여러 개의 스레드가 접근 요청을 한다고 가정하자,
+- 이후 lock이 풀리고 나면 과연 접근한 순서대로 접근하게 될까?
+
+```
+public class Main {
+
+    public static void main(String[] args) throws InterruptedException {
+        A a = new A();
+
+        Thread[] threads = new Thread[5];
+
+        for (int i = 0; i < threads.length; i++) {
+            final int idx = i;
+            threads[i] = new Thread(() -> {
+                a.run("thread" + idx);
+            });
+        }
+
+        for (Thread thread : threads) {
+            thread.start();
+            Thread.sleep(100);
+        }
+    }
+}
+```
+```
+public class A {
+
+    public synchronized void run(String name) {
+
+        System.out.println(name + " lock");
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println(name + " unlock");
+
+    }
+}
+```
+```
+// 출력 결과
+thread0 lock
+thread0 unlock
+thread4 lock
+thread4 unlock
+thread3 lock
+thread3 unlock
+thread2 lock
+thread2 unlock
+thread1 lock
+thread1 unlock
+```
+첫 번째 0이 진입한 이후에는 동기화 순서가 보장되지 않는 것을 확인할 수 
