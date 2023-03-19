@@ -23,61 +23,71 @@
 <br />
 - 시스템 콜인 open은 파일 디스크립터(File Descriptor)를 반환하고, 라이브러리 함수인 fopen은 파일 포인터(FILE*)를 반환한다.
 
-- 운영체제는 응용 프로그램이 하드웨어 리소스에 접근할 수 있도록 하는 Interface입니다.
-- 운영체제는 메모리 관리, 프로세스 관리, 데이터 보안 등과 같은 컴퓨터 시스템의 주요 작업을 수행합니다.
-- 커널은 이러한 운영 체제의 핵심입니다.
-- System call 및 Libaray call은 운영 체제와 관련된 두 가지 용어입니다.
-- 커널은 System call을 제공하는 반면 프로그래밍 라이브러리는 Library call을 제공합니다.
+<h1> File Descriptor </h1>
 
-<h3> System call </h3>
+- 파일 디스크립터는 아래와 같이 가져올 수 있다.
+- 사용한 파일 디스크립터는 close를 이용해 닫아주어야 한다.
 
-- 컴퓨터 시스템에는 Kernal 모드와 User 모드 2가지 모드가 있습니다.
-- Kernal 모드에서 프로그램은 메모리 및 하드웨어 리소스에 직접 액세스 할 수 있습니다.
-- User 모드에서 프로그램은 메모리 및 하드웨어 리소스에 직접 액세스 할 수 없습니다.
+```
+#include <fcntl.h>
 
-- 대부분의 프로그램은 User Mode에서 실행됩니다.
-- 프로그램에 메모리나 하드웨어 리소스가 필요한 경우 System call을 사용하여 커널에 요청을 보냅니다.
-- 그런 다음 모드가 User 모드에서 Kernal 모드로 전환되고, 작업이 끝나면 Kernal 모드에서 User 모드로 다시 전환됩니다.
-- 이러한 모드 전환을 Context Switcing이라고 합니다.
-<br />
+int main() {
+    int fd = open("hello.txt", O_RDONLY);
+    close(fd);
+    return 0;
+}
+```
 
-<b> UNIX 시스템에서 두 가지 System call 예를 들어 보겠습니다. <br /> </b>
+- 파일을 읽고 수정할 때는 <b> read </b> 와 <b> write </b> 를 이용하면 된다.
+- read와 write는 unistd.h에 정의되어 있다.
 
-- fork()
+```
+#include <fcntl.h>
+#include <unistd.h>
 
-  - 기존 프로세스를 유지하면서 새 프로세스를 작성하는데 사용됩니다.
-  - 특정 프로세스가 fork()를 호출하면 프로세스의 사본이 작성됩니다.
-  - 따라서 두 가지 프로세스가 있습니다.
-  - 하나는 Parent 프로세스이고, 작성된 새 프로세스는 Child 프로세스입니다.
+int main() {
+    int fd = open("hello.txt", O_RDWR);
+    char buf[101];
+    read(fd, buf, 100);
+    write(fd, buf, 100);
+    close(fd);
+    return 0;
+}
+```
 
-- exec()
+- 시스템 콜 함수는 메모리를 직접 할당하지 못하기 때문에 파일을 읽어올 때도 프로그래머가 buf를 넣어줘야 한다.
 
-  - 새 프로세스를 작성하고 종료 프로세스를 새 프로레스로 바꿉니다.
-  - 따라서 exec() 함수를 호출하면 새 프로세스만 존재합니다.
-  - 즉, System call을 수행한 프로세스가 파괴됩니다.
+<h1> FILE* </h1>
 
-<h3> Library Call </h3>
+- 파일 포인터는 아래와 같이 가져올 수 있다.
+- 사용한 파일 스트림은(Stream)은 fclose를 이용해 닫아주어야 한다.
 
-- Library call은 프로그래밍 라이브러리에서 제공하는 기능을 사용하도록 요청합니다.
-- 프로그래머가 특정 Library Call을 사용하는 경우 먼저 관련 라이브러리를 가져와야 합니다.
-- C 프로그래밍에서 프로그래머는 프로그램에 해더 파일을 포함시켜 라이브러리 함수를 호출할 수 있고, 전처리기 지시문(#include)를 사용하여 헤더 파일을 포함시켜 사용할 수 있습니다.
-- 헤더 파일에 예를 들면, stdio.h 헤더 파일에는 입력 및 출력 조작을 수행하는 다양한 기능이 포함되어 있습니다.
-- fopen()은 파일을 여는데 사용되는 반면, fclose()는 파일을 닫는데 사용됩니다.
-- printf() 기능은 형식화된 출력을 표준 출력 장치로 보낼 수 있고, scanf() 기능은 표준 입력 장치에서 형식화된 입력할 수 있습니다.
-<br />
-- 또한 "math.h" 헤더 파일에는 수학 연산을 수행하는 기능이 포함되어 있습니다.
-- "time.h" 헤더 파일에는 시간 및 데이터 계산을 수행하는 기능이 포함되어 있습니다.
-- "string.h" 헤더 파일에는 문자열 조작을 수행하는 기능이 있습니다.
+```
+#include <stdio.h>
 
+int main() {
+    FILE* stream = fopen("hello.txt", "r+");
+    fclose(stream);
+    return 0;
+}
+```
 
-<h2> System call과 Library call 차이 </h2>
+- 파일을 읽고 수정할 때는 fscanf와 fprintf를 이용하면 된다.
 
-- System call은 자원에 Access하기 위해 커널 모드로 들어가기 위해 프로그램 커널에 요청한 반면, Library Call은 프로그램이 프로그래밍 라이브러리에 정의된 기능에 Access하기 위한 요청입니다.
-<br />
-- UNIX / LINUX의 Manul은 명령어 man(manual)을 통해서 제공되고 있으며, manual의 영역에 따라 Section 번호를 제공합니다. 
+```
+#include <stdio.h>
 
-<h3> read() / write() 및 fread() / fwrite() 비교 </h3>
-
-- Library Call을 사용하더라도 내부적으로 System Call을 사용합니다.
-- fread() / fwrite()의 경우 내부적으로 Buffer에 데이터를 쌓았다가 일정 크기 이상이 되면 read() / write()를 실행합니다.
-- read() / write()와 같은 System Call을 사용하는 것보다 fread() / fwrite() 와 같이 Library Call을 사용함으로써, System Call의 호출 빈도가 확연하게 줄어드는 것을 알 수 있습니다.
+int main() {
+    FILE* stream = fopen("hello.txt", "r+");
+    char buf[101];
+    fscanf(stream, "%s", buf);
+    fprintf(stream, "%s", buf);
+    fprintf(stream, "%s", buf);
+    fprintf(stream, "%s", buf);
+    fprintf(stream, "%s", buf);
+    fclose(stream);
+    return 0;
+}
+```
+- 라이브러리 함수는 여러 번 함수를 호출해도 파일 구조체 내부 버퍼에 수정 사항을 담아 두었다가 한 번에 시스템 함수를 호출한다.
+- 따라서, 잦은 함수 호출에는 시스템 함수보다 빠르다.
