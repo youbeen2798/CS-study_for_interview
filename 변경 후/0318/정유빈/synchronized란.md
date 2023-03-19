@@ -136,4 +136,7 @@ thread1 lock
 thread2 hello
 thread1 unlock
 ```
-lock을 획득하는 thread1을 먼저 수행하고, thread가 진행되는 도중에 thread2에서 synchronized 키워드가 붙지 않는
+- lock을 획득하는 thread1을 먼저 수행하고, thread가 진행되는 도중에 thread2에서 synchronized 키워드가 붙지 않은 print 메소드를 호출하도록 했습니다.
+- 출력 결과를 보면 중간에 hello가 찍힌 것을 확인할 수 있습니다.
+- <b> 즉, 인스턴스 접근 자체에 lock이 걸린 것은 아닌 것을 확인할 수 있습니다. </b>
+
