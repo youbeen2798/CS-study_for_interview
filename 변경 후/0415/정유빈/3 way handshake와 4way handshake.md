@@ -1,7 +1,7 @@
 <h1> 3 way handshake </h1>
 
 - TCP 통신을 이용하여 데이터를 전송하기 위해 네트워크 연결을 설정(connection Establish) 하는 과정
-- TCP 통신은 PAR(Positive Acknowlegement with Re-transmission)을 통해 신뢰저긴 통신을 제공한다.
+- TCP 통신은 PAR(Positive Acknowlegement with Re-transmission)을 통해 신뢰적인 통신을 제공한다.
 - <b> PAR을 사용하는 기기는 ack를 받을 때까지 데이터 유닛을 재전송한다. </b>
 - 수신자가 데이터 유닛(세그먼트)이 손상된 것을 확인하면(Error Detection에 사용되는 transport layer의 checksum을 활용), 해당 세그먼트를 없앤다.
 - 그러며 sender는 positive ack이 오지 않은 데이터 유닛을 다시 보내야 한다. 
