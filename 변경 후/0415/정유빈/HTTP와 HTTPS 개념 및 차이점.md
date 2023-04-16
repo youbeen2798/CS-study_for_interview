@@ -3,6 +3,7 @@
 - HTTP(Hyper Text Transfer Protocol)의 약자로, 서버/클라이언트 모델에 따라 데이터를 주고 받기 위한 프로토콜이다.
 - HTTP는 인터넷에서 하이퍼텍스트를 교환하기 위한 통신 규약으로, 80번 포트를 사용한다.
 - 따라서 HTTP 서버가 80번 포트에서 요청을 기다리고 있으며, 클라이언트는 80번 포트로 요청을 보낸다.
+- 시스템 간의 통신을 주고 받기 위한 기본 프로토콜이지만 암호화되지 않기 때문에 쉽게 정보 탈취가 가능하다.
 
 <h1> HTTP 구조 </h1>
 
@@ -10,12 +11,15 @@
 - HTTP는 상태를 가지고 있지 않는 Stateless 프로토콜이며 Method, Path, Version, Headers, Body로 구성된다.
 - 하지만 HTTP는 암호화가 되지 않은 평문 데이터를 전송하는 프로토콜이기 때문에, HTTP로 비밀번호나 주민등록번호를 주고 받으면 제 3자가 정보를 조회할 수 있다.
 - 따라서 이러한 문제를 해결하기 위해 HTTPS가 등장하였다.
+- SSL 인증서를 통해 HTTP BODY 자체를 암호화한다.
 
 
 <h1> HTTPS(Hyper Text Transfer Protocol Secure)란? </h1>
 
 - HyperText Transfer Protocol over Secure Socket Layer, HTTP over TLS, HTTP over SSL, HTTP Secure 등으로 불리는 HTTPS는 HTTP에 데이터 암호화가 추가된 프로토콜이다.
 - HTTPS는 HTTP와 다르게 443번 포트를 사용하며, 네트워크 상에서 중간에 제 3자가 정보를 볼 수 없도록 암호화를 지원하고 있다.
+- 검색 순위 우선순위로, 구글에서 SE0(검색 엔진 최적화)
+- 도메인 네임 기반으로 SECURE 보장을 하므로, IP로 치면 이동 불가
 
 <h3> 대칭키 암호화와 비대칭키 암호화 </h3>
 
