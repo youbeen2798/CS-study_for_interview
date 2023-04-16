@@ -18,6 +18,8 @@
 
 - HyperText Transfer Protocol over Secure Socket Layer, HTTP over TLS, HTTP over SSL, HTTP Secure 등으로 불리는 HTTPS는 HTTP에 데이터 암호화가 추가된 프로토콜이다.
 - HTTPS는 HTTP와 다르게 443번 포트를 사용하며, 네트워크 상에서 중간에 제 3자가 정보를 볼 수 없도록 암호화를 지원하고 있다.
+- 검색 순위 우선순위로, 구글에서 SE0(검색 엔진 최적화)
+- 도메인 네임 기반으로 SECURE 보장을 하므로, IP로 치면 이동 불가
 
 <h3> 대칭키 암호화와 비대칭키 암호화 </h3>
 
