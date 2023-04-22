@@ -85,3 +85,4 @@
 
 ![image](https://user-images.githubusercontent.com/62228401/233755354-4971d510-d0fe-454c-a0e1-c82243663bed.png)
 
+- Async-blocking의 경우 sync-blocking과 성능의 차이가 비슷하여 사용하는 경우는 거의 없다.
