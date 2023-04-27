@@ -25,3 +25,12 @@ person.setName("MangKyu");
 
 <h1> Minor GC와 Major GC </h1>
 
+- JVM의 Heap 영역은 처음 설계될 때 다음의 2가지르 전제로 설계되었다.
+  - 대부분의 객체는 금방 접근 불가능한 상태(Unreachable)가 된다.
+  - 오래된 객체에서 새로운 객체로의 참조는 아주 적게 존재한다.
+
+- 즉, <b> 객체는 대부분 일회성이며, 메모리에 오랫동안 남아있는 경우는 드물다 </b>는 것이다.
+- 그렇기 때문에 객체의 생존 기간에 따라 물리적인 Heap 영역을 나누게 되었고 Young, Old 총 2가지 영역으로 설계되었다.
+- 초기에는 Perm 영역이 존재했지만 Java8부터 제거되었다.
+
+![image](https://user-images.githubusercontent.com/62228401/234888374-100ff1cb-5d03-44ae-820e-69083561abd5.png)
