@@ -34,3 +34,13 @@ person.setName("MangKyu");
 - 초기에는 Perm 영역이 존재했지만 Java8부터 제거되었다.
 
 ![image](https://user-images.githubusercontent.com/62228401/234888374-100ff1cb-5d03-44ae-820e-69083561abd5.png)
+
+- Young 영역(Young Generation)
+  - 새롭게 생성된 객체가 할당(Allocation)되는 영역
+  - 대부분의 객체가 금방 Unreacable 상태가 되기 때문에, 많은 상태가 Young 영역에 생성되었다가 사라진다.
+  - Young 영역에 대한 가비지 컬렉션(Garbage Collection)을 Minor GC라고 부른다.
+
+- Old 영역(Old generation)
+  - Young 영역에서 Reachable 상태를 유지하여 살아남은 객체가 복사되는 영역
+  - Young 영역보다 크게 할당되며, 영역의 크기가 큰 만큼 가비지가 적게 발생한다.
+  - Old 영역에 대한 가비지 컬렉션(Garbage Collection)을 Major GC 또는 Full GC라고 부른다.
