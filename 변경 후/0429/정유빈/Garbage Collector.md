@@ -89,4 +89,18 @@ person.setName("MangKyu");
 - Eden 영역 : 새로 생성된 객체가 할당(Allocation)되는 영역
 - Survivor 영역 : 최소 1버의 GC 이상 살아남은 객체가 존재하는 영역
 
-객체가 새롭게 생성되면
+- 객체가 새롭게 생성되면 Young 영역 중에서도 Eden 영역에 할당(Allocation)된다.
+- 그리고 <b> Eden 영역이 꽉 차면 Minor GC가 발생</b> 하게 되는데, 사용되지 않은 메모리는 해제되고 Eden 영역에 존재하는 (사용중인) Survivor 영역으로 옮겨지게 된다.
+- Survivor 영역은 총 2개이지만 반드시 1개의 영역에만 데이터가 존재해야 하는데, Young 영역의 동작 순서를 자세히 살펴보도록 하자.
+
+1. 새로 생성된 객체가 Eden 영역에 할당된다.
+2. 객체가 계속 생성되어 Eden 영역이 꽉 차게 되고 Minor GC가 실행된다.
+  - 1. Eden 영역에서 사용되지 않은 객체의 메모리가 해제된다.
+  - 2. Eden 영역에서 살아남은 객체는 1개의 Survivor 영역으로 이동된다. 
+3. 1 ~ 2번의 과정이 반복되다가 Survivor 영역이 가득 차게 되면 Survivor 영역의 살아남은 객체를 다른 Survivor 영역으로 이동시킨다.(1개의 Survivor 영역은 반드시 빈 상태가 된다.)
+4. 이러한 과정을 반복하여 계속해서 살아남은 객체는 Old 영역으로 이동(Promotion)된다.
+
+- 객체의 생존 횟수를 카운트하기 위해 Minor GC에서 객체가 살아남은 횟수를 의미하는 age를 Object Header에 기록한다.
+- 그리고 Minor GC 때 Object Header에 기록된 age를 보고 Promotion 여부를 결정한다.
+- 또한 Survivor 영역 중 1개는 반드시 사용이 되어야 한다.
+- 만약 두 Survivor 영역에 모두 데이터가 존재하거나, 모두 사용량이 0이라면 현재 시스템이 정상적인 상황이 아님을 파악할 수 있다.
