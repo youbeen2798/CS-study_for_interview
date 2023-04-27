@@ -52,7 +52,11 @@ person.setName("MangKyu");
 
 ![image](https://user-images.githubusercontent.com/62228401/234896377-e8d261bb-d7aa-4ea5-a42c-1421f23bdc12.png)
 
-- 카드 테이블에는 Old 영역에 있는 객체가 Young 영역의 객체를 참조할 때마다 그에 대한 정보가 표시된다.
+- 카드 테이블에는 <b> Old 영역에 있는 객체가 Young 영역의 객체를 참조할 때마다 그에 대한 정보가 표시 </b>된다.
 - 카드 테이블이 도입된 이유는 간단하다.
 - Young 영역에서 가비지 컬렉션(Minor GC)가 실행될 때 모든 Old 영역에 존재하는 객체를 검사하여 참조되지 않는 Young 영역의 객체를 식별하는 것이 비효율적이기 때문이다.
 - 그렇기 때문에 Young 영역에서 가비지 컬렉션이 진행될 때 <b> 카드 테이블만 조회하여 GC의 대상인지 식별 </b> 할 수 있도록 하고 있다.
+
+<h1> Garbage Collection(가비지 컬렉션)의 동작 방식 </h1>
+
+- Young 영역과 Old 영역은 서로 
