@@ -89,4 +89,4 @@ person.setName("MangKyu");
 - Eden 영역 : 새로 생성된 객체가 할당(Allocation)되는 영역
 - Survivor 영역 : 최소 1버의 GC 이상 살아남은 객체가 존재하는 영역
 
-
+객체가 새롭게 생성되면
