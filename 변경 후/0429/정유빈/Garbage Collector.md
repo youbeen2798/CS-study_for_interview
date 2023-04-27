@@ -104,3 +104,15 @@ person.setName("MangKyu");
 - 그리고 Minor GC 때 Object Header에 기록된 age를 보고 Promotion 여부를 결정한다.
 - 또한 Survivor 영역 중 1개는 반드시 사용이 되어야 한다.
 - 만약 두 Survivor 영역에 모두 데이터가 존재하거나, 모두 사용량이 0이라면 현재 시스템이 정상적인 상황이 아님을 파악할 수 있다.
+
+
+<h1> Major GC의 동작 방식 </h1>
+
+- Young 영역에서 오래 살아남은 객체는 Old 영역으로 Promotion됨을 확인할 수 있다.
+- 그리고 Major GC는 <b> 객체들이 계속 Promotion되어 Old 영역의 메모리가 부족해지면 </b> 발생하게 된다.
+- Young 영역은 일반적으로 Old 영역보다 크기가 작기 때문에 GC가 0,5초에서 1초 사이에 끝난다.
+- 그렇기 때문에 Minor GC는 애플리케이션에 크게 영향을 주지 않는다.
+- 하지만 Old 영역은 Young 영역보다 크며 Young 영역을 참조할 수도 있다.
+- 그렇기 때문에 Major GC는 일반적으로 Minor GC보다 시간이 오래 걸리며, 10배 이상의 시간을 사용한다.
+
+![image](https://user-images.githubusercontent.com/62228401/234907008-b086d545-48bc-4d02-a054-0a7c5a387977.png)
