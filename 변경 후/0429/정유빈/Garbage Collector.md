@@ -68,3 +68,5 @@ person.setName("MangKyu");
 <h3> Stop the World </h3>
 
 - Stop the World는 가비지 컬렉션을 실행하기 위해 <b> JVM이 애플리케이션의 실행을 멈추는 작업 </b>이다.
+- GC가 실행될 때는 GC를 실행하는 쓰레드를 제외한 모든 쓰레드의 작업이 중단되고, GC가 완료되면 작업이 재개된다.
+- 당연히 모든 ㄲ
