@@ -49,3 +49,6 @@ person.setName("MangKyu");
 
 - 예외적인 상황으로 Old 영역에 있는 객체가 Young 영역의 객체를 참조하는 경우도 존재할 것이다. 
 - 이러한 경우를 대비하여 Old 영역에는 512 bytes의 덩어리(Chunk)로 되어 있는 카드 테이블(Card Table)이 존재한다.
+
+![image](https://user-images.githubusercontent.com/62228401/234896377-e8d261bb-d7aa-4ea5-a42c-1421f23bdc12.png)
+
