@@ -59,4 +59,12 @@ person.setName("MangKyu");
 
 <h1> Garbage Collection(가비지 컬렉션)의 동작 방식 </h1>
 
-- Young 영역과 Old 영역은 서로 
+- Young 영역과 Old 영역은 서로 다른 메모리 구조로 되어 있기 때문에, 세부적인 동작 방식은 다르다.
+- 하지만 기본적으로 가비지 컬렉션이 실해된다고 하면 다음의 2가지 공통적인 단계를 따르게 된다.
+
+1. Stop the World
+2. Makr and Sweep
+
+<h3> Stop the World </h3>
+
+- Stop the World는 가비지 컬렉션을 실행하기 위해 <b> JVM이 애플리케이션의 실행을 멈추는 작업 </b>이다.
