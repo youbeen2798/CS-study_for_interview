@@ -37,3 +37,19 @@
 - 이 같은 이유로 JVM은 모든 코드를 JIT 컴파일러 방식으로 실행하지 않고, 인터프리터 방식을 사용하다가 일정한 기이 넘어가면 JIT 컴파일러 방식으로 진행합니다.
 
 <b> (3) Garbage Collector </b>
+
+- Garbage Collector(GC)는 힙 메모리 영역에 생성된 객체들 중에서 참조되지 않은 객체들을 탐색 후 제거하는 역할읋 합니다.
+- 이 때, GC가 역할을 하는 시간은 언제인지 정확히 알 수 없습니다.
+
+<b> (4) Runtime Data Area </b>
+
+- JVM의 메모리 영역으로 자바 애플리케이션을 실행할 때 사용되는 데이터들을 적재하는 영역입니다.
+- 이 영역은 크게 Method Area, Heap Area, Stack Area, PC Register, Native Method Stack으로 나눌 수 있다.
+
+![image](https://user-images.githubusercontent.com/62228401/235346128-634e3586-9818-4c76-9b25-23fcfd38f12c.png)
+
+<b> (1) Method Area </b>
+
+- 모든 쓰레드가 공유하는 메모리 영역이다.
+- 메소드 영역은 클래스, 인터페이스, 메소드, 필드, Static 변수 등의 바이트 코드를 보관합니다.
+
