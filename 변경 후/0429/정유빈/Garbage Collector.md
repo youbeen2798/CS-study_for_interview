@@ -25,7 +25,7 @@ person.setName("MangKyu");
 
 <h1> Minor GC와 Major GC </h1>
 
-- JVM의 Heap 영역은 처음 설계될 때 다음의 2가지르 전제로 설계되었다.
+- JVM의 Heap 영역은 처음 설계될 때 다음의 2가지를 전제로 설계되었다.
   - 대부분의 객체는 금방 접근 불가능한 상태(Unreachable)가 된다.
   - 오래된 객체에서 새로운 객체로의 참조는 아주 적게 존재한다.
 
