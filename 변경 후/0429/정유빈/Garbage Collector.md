@@ -110,7 +110,7 @@ person.setName("MangKyu");
 
 - Young 영역에서 오래 살아남은 객체는 Old 영역으로 Promotion됨을 확인할 수 있다.
 - 그리고 Major GC는 <b> 객체들이 계속 Promotion되어 Old 영역의 메모리가 부족해지면 </b> 발생하게 된다.
-- Young 영역은 일반적으로 Old 영역보다 크기가 작기 때문에 GC가 0,5초에서 1초 사이에 끝난다.
+- Young 영역은 일반적으로 Old 영역보다 크기가 작기 때문에 GC가 0.5초에서 1초 사이에 끝난다.
 - 그렇기 때문에 Minor GC는 애플리케이션에 크게 영향을 주지 않는다.
 - 하지만 Old 영역은 Young 영역보다 크며 Young 영역을 참조할 수도 있다.
 - 그렇기 때문에 Major GC는 일반적으로 Minor GC보다 시간이 오래 걸리며, 10배 이상의 시간을 사용한다.
