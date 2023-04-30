@@ -87,7 +87,7 @@ person.setName("MangKyu");
 - Young 영역은 1개의 Eden 영역과 2개의 Survivor 영역, 총 3가지로 나누어진다.
 
 - Eden 영역 : 새로 생성된 객체가 할당(Allocation)되는 영역
-- Survivor 영역 : 최소 1버의 GC 이상 살아남은 객체가 존재하는 영역
+- Survivor 영역 : 최소 1번의 GC 이상 살아남은 객체가 존재하는 영역
 
 - 객체가 새롭게 생성되면 Young 영역 중에서도 Eden 영역에 할당(Allocation)된다.
 - 그리고 <b> Eden 영역이 꽉 차면 Minor GC가 발생</b> 하게 되는데, 사용되지 않은 메모리는 해제되고 Eden 영역에 존재하는 (사용중인) Survivor 영역으로 옮겨지게 된다.
