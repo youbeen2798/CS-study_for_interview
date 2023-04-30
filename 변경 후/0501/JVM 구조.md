@@ -17,4 +17,19 @@
 
 - 위에서 자바 프로그램의 실행 단계를 아주 간략하게 소개하였는데, JVM의 구체적인 수행 과정은 언급하지 않았습니다.
 - 이제부터 JVM이 정확히 어떻게 동작하고 구조가 어떤지 알아보자.
+- JVM의 구조는 크게 보면, Garbage Collector, Execution Engine, Class Loader, Runtime Data Area로 4가지로 나눌 수 있습니다.
+
+![image](https://user-images.githubusercontent.com/62228401/235345587-42b365ff-e372-4c13-bdd4-6c3731d1b7a7.png)
+
+- 위에서 설명하였듯이, 자바 소스 파일은 자바 컴파일러에 의해서 바이트 코드 형태인 클래스 파일이 됩니다.
+- 그리고 이 클래스 파일은 클래스 로더가 읽어 들이면서 JVM이 수행됩니다.
+
+<b> (1) Class Loader </b>
+
+- JVM 내로 클래스 파일을 로드하고, 링크를 통해 배치하는 작업을 수행하는 모듈이다.
+- 런타임 시에 동시적으로 클래스를 로드합니다.
+
+<b> (2) Execution Engine </b>
+
+- 클래스 로더를 통해 JVM 내의 Runtime Data Area에 배치된 바이트 코드들을 명령어 단위로 읽어서 실행합니다.
 - 
