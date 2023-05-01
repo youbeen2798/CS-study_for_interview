@@ -25,7 +25,7 @@ person.setName("MangKyu");
 
 <h1> Minor GC와 Major GC </h1>
 
-- JVM의 Heap 영역은 처음 설계될 때 다음의 2가지르 전제로 설계되었다.
+- JVM의 Heap 영역은 처음 설계될 때 다음의 2가지를 전제로 설계되었다.
   - 대부분의 객체는 금방 접근 불가능한 상태(Unreachable)가 된다.
   - 오래된 객체에서 새로운 객체로의 참조는 아주 적게 존재한다.
 
@@ -60,7 +60,7 @@ person.setName("MangKyu");
 <h1> Garbage Collection(가비지 컬렉션)의 동작 방식 </h1>
 
 - Young 영역과 Old 영역은 서로 다른 메모리 구조로 되어 있기 때문에, 세부적인 동작 방식은 다르다.
-- 하지만 기본적으로 가비지 컬렉션이 실해된다고 하면 다음의 2가지 공통적인 단계를 따르게 된다.
+- 하지만 기본적으로 가비지 컬렉션이 실행된다고 하면 다음의 2가지 공통적인 단계를 따르게 된다.
 
 1. Stop the World
 2. Mark and Sweep
@@ -87,7 +87,7 @@ person.setName("MangKyu");
 - Young 영역은 1개의 Eden 영역과 2개의 Survivor 영역, 총 3가지로 나누어진다.
 
 - Eden 영역 : 새로 생성된 객체가 할당(Allocation)되는 영역
-- Survivor 영역 : 최소 1버의 GC 이상 살아남은 객체가 존재하는 영역
+- Survivor 영역 : 최소 1번의 GC 이상 살아남은 객체가 존재하는 영역
 
 - 객체가 새롭게 생성되면 Young 영역 중에서도 Eden 영역에 할당(Allocation)된다.
 - 그리고 <b> Eden 영역이 꽉 차면 Minor GC가 발생</b> 하게 되는데, 사용되지 않은 메모리는 해제되고 Eden 영역에 존재하는 (사용중인) Survivor 영역으로 옮겨지게 된다.
@@ -110,7 +110,7 @@ person.setName("MangKyu");
 
 - Young 영역에서 오래 살아남은 객체는 Old 영역으로 Promotion됨을 확인할 수 있다.
 - 그리고 Major GC는 <b> 객체들이 계속 Promotion되어 Old 영역의 메모리가 부족해지면 </b> 발생하게 된다.
-- Young 영역은 일반적으로 Old 영역보다 크기가 작기 때문에 GC가 0,5초에서 1초 사이에 끝난다.
+- Young 영역은 일반적으로 Old 영역보다 크기가 작기 때문에 GC가 0.5초에서 1초 사이에 끝난다.
 - 그렇기 때문에 Minor GC는 애플리케이션에 크게 영향을 주지 않는다.
 - 하지만 Old 영역은 Young 영역보다 크며 Young 영역을 참조할 수도 있다.
 - 그렇기 때문에 Major GC는 일반적으로 Minor GC보다 시간이 오래 걸리며, 10배 이상의 시간을 사용한다.
