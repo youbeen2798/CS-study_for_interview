@@ -38,7 +38,7 @@
 
 <b> (3) Garbage Collector </b>
 
-- Garbage Collector(GC)는 힙 메모리 영역에 생성된 객체들 중에서 참조되지 않은 객체들을 탐색 후 제거하는 역할읋 합니다.
+- Garbage Collector(GC)는 힙 메모리 영역에 생성된 객체들 중에서 참조되지 않은 객체들을 탐색 후 제거하는 역할을 합니다.
 - 이 때, GC가 역할을 하는 시간은 언제인지 정확히 알 수 없습니다.
 
 <b> (4) Runtime Data Area </b>
