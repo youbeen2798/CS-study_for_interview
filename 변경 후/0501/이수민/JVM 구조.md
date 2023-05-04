@@ -163,6 +163,6 @@ Loading -> Linking -> lnitialization
 </br>
 </br>
 
-참고자료
+참고자료 </br>
 https://www.youtube.com/watch?v=zta7kVTVkuk&t=72s </br>
 https://steady-coding.tistory.com/305 </br>
