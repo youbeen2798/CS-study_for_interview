@@ -168,6 +168,85 @@ public class ComputerFactory {
 - SamsungComputerFactory, LGComputerFactory는 ComputerFactory 인터페이스로 캡슐화하고, 어떤 제조사의 부품을 생성할지 명확하므로, 각각의 제조사 부품을 생성한다.
 - FactoryOfComputerFactory 클래스에서 컴퓨터를 생산하는 createComputer() 메소드를 호출한다.
 
+- 먼저 SamsungComputerFactory, SamsungKeyboard, Mouse, LGMouse, SamsungMouse 클래스는 이전 코드와 동일하다.
+
+1) 먼저 SamsungComputerFactory, LGComputerFactory 클래스를 정의하고, 이들을 캡슐화하는 ComputerFactory 인터페이스를 정의한다.
+- 각 클래스는 자신의 제조사 부품 객체를 생성한다.
+- 예를 들어, SamsungComputerFactory 클래스는 삼성 키보드, 마우스를 가지므로 SamsungKeyboard, SamsungMouse 객체를 생성한다.
+
+```
+public class SamsungComputerFactory implements ComputerFactory {
+    public SamsungKeyboard createKeyboard() {
+        return new SamsungKeyboard();
+    }
+
+    public SamsungMouse createMouse() {
+        return new SamsungMouse();
+    }
+}
+```
+
+```
+public class LGComputerFactory implements ComputerFactory {
+    public LGKeyboard createKeyboard() {
+        return new LGKeyboard();
+    }
+
+    public LGMouse createMouse() {
+        return new LGMouse();
+    }
+}
+```
+```
+public interface ComputerFactory {
+    public Keyboard createKeyboard();
+    public Mouse createMouse();
+}
+```
+
+2) 다음으로 FactoryOfComputerFactory 클래스를 정의한다.
+- 이 클래스는 패턴 적용 전 ComputerFactory 클래스와 하는 일이 같다.
+- 입력 값에 따라 객체 생성을 분기하며, 이 때 어떤 제조사 객체를 생성할지 결정한다.
+- 즉, 부품이 아니라 컴퓨터 객체를 생성한다는 점에서 차이점이 있다.
+
+```
+public class FactoryOfComputerFactory {
+    public void createComputer(String type){
+        ComputerFactory computerFactory= null;
+        switch (type){
+            case "LG":
+                computerFactory = new LGComputerFactory();
+                break;
+
+            case "Samsung":
+                computerFactory = new SamsungComputerFactory();
+                break;
+        }
+
+        computerFactory.createKeyboard();
+        computerFactory.createMouse();
+    }
+}
+```
+
+3) 마지막으로 컴퓨터를 생산하기 위한 Client 클래스를 정의한다.
+
+```
+public class Client {
+    public static void main(String args[]){
+        FactoryOfComputerFactory factoryOfComputerFactory = new FactoryOfComputerFactory();
+        factoryOfComputerFactory.createComputer("LG");
+    }
+}
+```
+
+
+<h1> 정리 </h1>
+
+- 팩토리 메소드 패턴은 구성품마다 팩토리를 만들어서 어떤 객체를 형성했는데, 그 객체의 구성품은 일정하므로, 추상 팩토리 패턴을 적용하여 관련된 객체들을 한 꺼번에 캡슐화하여 팩토리로 만들어서 일관되게 객체를 생성하도록 한다.
+
+
+
 
 
 
