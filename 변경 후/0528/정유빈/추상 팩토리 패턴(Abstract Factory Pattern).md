@@ -129,6 +129,53 @@ public class Client {
 }
 ```
 
+- 팩토리 메소드 패턴을 사용하여 컴퓨터를 생산해보았다.
+- 그런데 컴퓨터 구성품은 키보드, 마우스, 모니터 등 여러 가지가 있다.
+
+```
+public class ComputerFactory {
+    public void createComputer(String type){
+        KeyboardFactory keyboardFactory = new KeyboardFactory();
+        MouseFactory mouseFactory = new MouseFactory();
+        BodyFactory bodyFactory = new BodyFactory();
+        MonitorFactory monitorFactory = new MonitorFactory();
+        SpeakerFactory speakerFactory = new SpeakerFactory();
+        PrinterFactory printerFactory = new PrinterFactory();
+
+        keyboardFactory.createKeyboard(type);
+      
+      mouseFactory.createMouse(type);
+        bodyFactory.createBody(type);
+        monitorFactory.createMonitor(type);
+        speakerFactory.createSpeaker(type);
+        printerFactory.createPrinter(type);
+        System.out.println("--- " + type + " 컴퓨터 완성 ---");
+    }
+}
+```
+
+- 그런데 사실 Samsung 컴퓨터라면 모든 구성품이 Samsung이어야 하고, LG라면 모든 구성품이 LG여야 한다.
+- 따라서, 추상 팩토리를 사용하여 구성품이 모두 동일한 제조사가 되기 위해서는, "추상 팩토리 패턴"을 사용해야 한다.
+
+
+2) 추상 팩토리 패턴 적용
+
+![image](https://github.com/youbeen2798/CS-study_for_interview/assets/62228401/c1c7176e-c38f-41c9-b987-8c30adad78e1)
+
+- 패턴 적용 전과 비교했을 때 차이점은 다음과 같다.
+
+- 어떤 제조사의 부품을 선택할지 결정하는 팩토리 클래스(KeyboardFactory, MouseFactory)가 제거되고, Computer Factory 클래스가 추가되었스빈다.(SamsungComputerFactory, LGComputerFactory)
+- SamsungComputerFactory, LGComputerFactory는 ComputerFactory 인터페이스로 캡슐화하고, 어떤 제조사의 부품을 생성할지 명확하므로, 각각의 제조사 부품을 생성한다.
+- FactoryOfComputerFactory 클래스에서 컴퓨터를 생산하는 createComputer() 메소드를 호출한다.
+
+
+
+
+
+
+
+
+
 
 
 
