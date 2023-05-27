@@ -78,7 +78,7 @@
 ## 차이점: 동기화 대상의 개수(화장실 개수)
 - Mutex는 동기화 대상이 오직 1개일 때 사용하며, Semaphore는 동기화 대상이 1개 이상일때 사용한다.
 - Mutex는 자원을 소유할 수 있고 책임을 가지는 반면, Semaphore는 자원 소유가 불가하다.
-- Mutex는 상태가 0, 1 뿐이므로 Lock을 가질 수 있고 소유하고 있는 스레드만이 Mutex를 해제할 수 있는 반면, Semaphore는 Semaphore를 소유하지 않는 스레드가 Semaphore를 해제할 수 있따.
+- Mutex는 상태가 0, 1 뿐이므로 Lock을 가질 수 있고 소유하고 있는 스레드만이 Mutex를 해제할 수 있는 반면, Semaphore는 Semaphore를 소유하지 않는 스레드가 Semaphore를 해제할 수 있다.
 - Mutex는 프로세스의 범위를 가지며 프로세스 종료될 때 자동으로 Clean up 되는 반면에, Semaphore는 시스템 범위에 걸쳐 있고 파일 시스템 상의 파일이 존재한다.
 
 </br>
