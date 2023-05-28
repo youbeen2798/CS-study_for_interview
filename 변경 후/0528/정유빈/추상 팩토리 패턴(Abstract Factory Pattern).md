@@ -164,7 +164,7 @@ public class ComputerFactory {
 
 - 패턴 적용 전과 비교했을 때 차이점은 다음과 같다.
 
-- 어떤 제조사의 부품을 선택할지 결정하는 팩토리 클래스(KeyboardFactory, MouseFactory)가 제거되고, Computer Factory 클래스가 추가되었스빈다.(SamsungComputerFactory, LGComputerFactory)
+- 어떤 제조사의 부품을 선택할지 결정하는 팩토리 클래스(KeyboardFactory, MouseFactory)가 제거되고, Computer Factory 클래스가 추가되었습니다.(SamsungComputerFactory, LGComputerFactory)
 - SamsungComputerFactory, LGComputerFactory는 ComputerFactory 인터페이스로 캡슐화하고, 어떤 제조사의 부품을 생성할지 명확하므로, 각각의 제조사 부품을 생성한다.
 - FactoryOfComputerFactory 클래스에서 컴퓨터를 생산하는 createComputer() 메소드를 호출한다.
 
