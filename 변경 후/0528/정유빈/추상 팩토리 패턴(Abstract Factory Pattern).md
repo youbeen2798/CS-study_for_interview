@@ -23,7 +23,7 @@
 1) 먼저 키보드 관련 클래스를 정의한다.
 
 - LGKeyboard와 SamsungKeyboard 클래스를 정의하고, 이를 캡슐화하는 keyboard 인터페이스를 정의한다.
-- 그리고 KeyboardFactory 클래스에서 입력값에 따라 LGKeyboard를 생헝할지, SamsungKeyboard를 생성할지 결정합니다.
+- 그리고 KeyboardFactory 클래스에서 입력값에 따라 LGKeyboard를 생성할지, SamsungKeyboard를 생성할지 결정합니다.
 
 ```
 public class LGKeyboard implements Keyboard {
