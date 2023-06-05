@@ -9,6 +9,7 @@
 <h3> 추상 팩토리 패턴 </h3>
 
 - 서로 관련이 있는 객체들을 통째로 묶어서 팩토리 클래스 만들고, 이들 팩토리를 조건에 따라 생성하도록 다시 팩토리를 만들어서 객체를 생성하는 패턴
+- 즉, 서로 관련 있는 여러 객체를 만들어주는 인터페이스를 제공하는 패턴
 - 추상 팩토리 패턴은, 팩토리 메소드 패턴을 좀 더 캡슐화한 방식
 
 - 예를 들어, 컴퓨터를 생산하는 공장이 있을 때, 마우스, 키보드, 모니터의 제조사로 Samsung과 LG가 있다고 가정
@@ -23,7 +24,7 @@
 1) 먼저 키보드 관련 클래스를 정의한다.
 
 - LGKeyboard와 SamsungKeyboard 클래스를 정의하고, 이를 캡슐화하는 keyboard 인터페이스를 정의한다.
-- 그리고 KeyboardFactory 클래스에서 입력값에 따라 LGKeyboard를 생헝할지, SamsungKeyboard를 생성할지 결정합니다.
+- 그리고 KeyboardFactory 클래스에서 입력값에 따라 LGKeyboard를 생성할지, SamsungKeyboard를 생성할지 결정합니다.
 
 ```
 public class LGKeyboard implements Keyboard {
@@ -164,7 +165,7 @@ public class ComputerFactory {
 
 - 패턴 적용 전과 비교했을 때 차이점은 다음과 같다.
 
-- 어떤 제조사의 부품을 선택할지 결정하는 팩토리 클래스(KeyboardFactory, MouseFactory)가 제거되고, Computer Factory 클래스가 추가되었스빈다.(SamsungComputerFactory, LGComputerFactory)
+- 어떤 제조사의 부품을 선택할지 결정하는 팩토리 클래스(KeyboardFactory, MouseFactory)가 제거되고, Computer Factory 클래스가 추가되었습니다.(SamsungComputerFactory, LGComputerFactory)
 - SamsungComputerFactory, LGComputerFactory는 ComputerFactory 인터페이스로 캡슐화하고, 어떤 제조사의 부품을 생성할지 명확하므로, 각각의 제조사 부품을 생성한다.
 - FactoryOfComputerFactory 클래스에서 컴퓨터를 생산하는 createComputer() 메소드를 호출한다.
 
