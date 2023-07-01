@@ -74,4 +74,90 @@ msgrcv(msqid, &rbuf, MSGSZ, 1, 0);
 
 <h2>  4. 공유 메모리 </h2>
 
+- 그전에 리눅스의 메모리 공간구조에 대해 알아보자.
+- 리눅스 Linux는 프로세스 공간이 완전히 분리되어 있다.
+- 그리고 어떤 프로세스는 하나 당 4GB 공간을 분리하고 있고, 사용자 공간을 0~3GB 주소까지 저장하고 커널 공간을 3~4GB 주소까지 지정한다.
+- 물론 이는 실제 물리 메모리 RAM이 아닌 가상 메모리이다.
+- 여기서 중요한 것은, 모든 프로세스가 커널 공간은 공유한다는 것이다.
+- 그래서 리눅스는 커널 공간에서 프로세스 간 공유가 가능하다.
 
+![image](https://github.com/youbeen2798/CS-study_for_interview/assets/62228401/6d0850ba-fbbe-4c14-b9ee-f889990ee463)
+
+- 공유 메모리 기법은 커널 공간에 메모리 공간을 만들고, 해당 공간을 변수처럼 쓰는 방식이다.
+- 데이터를 버퍼에 넣어 처리하는 메시지 큐와 달리, 해당 메모리 주소를 변수처럼 접근해서 사용한다.
+- 공유 메모리 key를 통해 여러 프로세스가 접근을 가능하게 한다.
+
+```
+// 1. 공유 메모리 생성 및 메모리 주소 얻기
+shmid = shmget((key_t)1234, SIZE, IPC_CREAT|0666/* 접근권한*/));
+shmaddr = shmat(shmid, (void*)0, 0);
+
+// 2. 공유 메모리에 쓰기
+strcpy((char*)shmaddr, "Linux Programming");
+
+// 3. 공유 메모리 읽기
+printf("%s\n", (char*)shmaddr);
+```
+
+<h2> 5. 시그널(Signal) </h2>
+
+- 가장 많이 사용하는 기법 중 하나
+- 커널 혹은 프로세스에서 다른 프로세스에 이벤트가 발생했는지 알려주는 기법
+- 프로세스 관련 코드에 관련 시그널 핸들러를 등록하여, 해당 시그널 처리를 실행하는 방식으로 공유한다.
+
+ ```
+  작동 매커니즘
+1. 시그널 무시
+2. 시그널 Block(블록을 풀면 프로세스에 해당 시그널을 전달해요)
+3. 등록된 시그널 핸들러로 특정 동작 수행
+4. 등록된 시그널 핸들러가 없으면 커널에서 기본 동작 수행
+```
+
+<b> 주요 시그널 </b>
+
+- 운영체제에서 정의된다.(보통 64개)
+- CLI에게 kill -l 명령어로 확인 가능하다.(리눅스, Mac OS 기준)
+
+몇 가지 주요 시그널
+```
+SIGKILL : 프로세스를 죽여요. 슈퍼 관리자가 사용하는 시그널로, 어떤 경우든 프로세스를 죽여요.
+SIGALRAM : 알람을 발생시켜요.
+SIGSTP : 프로세스를 멈춰요 → Ctrl+Z
+SIGCONT : 멈춘 프로세스를 실행시켜요.
+SIGSEGV : 프로세스가 다른 메모리 영역을 침범함을 알려요.
+SIGUSR1 & 2: 기본 동작이 정의 안된 시그널이에요. 프로그램으로 프로세스를 만들 때, 프로그램에서 특정 시그널은 기본 동작 대신 특별한 동작을 하도록 정의를 할 수 있어요. 위 그림에 맨 마지막 두개를 보시면 아시듯이, Mac OS에선 USR1, USR2로 정의되어 있어요.
+```
+
+예제
+```
+static void signal_handler(int signo){
+	printf("Catch SIGINT!\n");
+	exit(EXIT_SUCCESS);
+}
+
+// 시그널 핸들러 함수 호출
+int main(){
+	// SIGINT를 받으면 signal_handler 함수 호출
+	if(signal(SIGINT, signal_handler) == SIG_ERR){
+		printf("Can't catch SIGINT!\n");
+		exit(EXIT_FAILURE);
+	}
+	for(;;){
+		pause();
+	}
+	return 0;
+}
+
+// 시그널 핸들러 무시
+int main(){
+	// SIGINT를 받으면 무시
+	if(signal(SIGINT, SIG_IGN) == SIG_ERR){
+		printf("Can't catch SIGINT!\n");
+		exit(EXIT_FAILURE);
+	}
+	for(;;){
+		pause();
+	}
+	return 0;
+}
+```
