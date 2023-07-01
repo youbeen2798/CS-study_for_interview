@@ -22,3 +22,26 @@ Process Metadata에는 다음과 같은 정보들이 들어있다.
     - 프로그램 수행 시 필요한 주변 장치, 파일들의 정보를 기억시킨다.
 - 프로그램 카운터(계수기)
     - 다음에 실행되는 명령어의 주소를 기억시킨다.
+
+
+<h2> PCB (Process Controll Block) </h2>
+
+- 프로세스 메타데이터들을 저장해 놓는 곳
+- 하나의 PCB 안에는 하나의 프로세스 정보가 담겨있다.
+
+![image](https://github.com/youbeen2798/CS-study_for_interview/assets/62228401/a028dab3-df6a-482d-98e9-58838ed9dfe0)
+
+- 프로그램 실행 -> 프로그램 생성 -> 프로세스 주소 공간에 (코드, 데이터, 스택)생성 -> 이 프로세스의 메타데이터들이 PCB에 저장
+
+<h2> PCB(Process Control Block) 상세 구조 </h2>
+
+![image](https://github.com/youbeen2798/CS-study_for_interview/assets/62228401/a02d955a-e01c-4593-bb0f-ef1173f4c4b4)
+
+- Process State : 프로세스 상태 (Create, Ready, Running, Block, Terminated)
+- Process Counter : 다음 실행할 명령어의 주소값
+- CPU Registers : accumulater, index register, stack pointers, general purpose registers.
+
+<h2> PCB가 필요한 이유? </h2>
+
+- CPU에서는 프로세스의 상태에 따라 교체 작업이 이루어진다.
+- 인터럽트가 발생해서 할당받은 프로세스가 block 상태가 되고 다른 프로세스를 running으로 바꿀 때
