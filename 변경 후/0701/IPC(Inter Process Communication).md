@@ -11,14 +11,15 @@
 
 <h3> IPC 종류 </h3>
 
-<b> 1. File 사용 </b>
+<h2> 1. File 사용 </h2>
 
 - 텍스트 파일 txt(혹은 다른 포멧의 파일)을 통해 데이터를 주고 받는 것도 IPC 기법 중 하나
 - 그러나 이 방법은 문제가 많다.
 - 이 방식은 실시간으로 직접 원하는 프로세스에 데이터를 전달하는게 어렵다.
 - 디스크에서 데이터 파일을 읽고 프로세스에 적재(load) 되는 과정에서 Context Switcing(컨텍스트 스위칭), Interrupt(인터럽트) 등 여러 일을 처리해야 하기 때문이다.
 
-<b> 2. 파이프(Pipe) </b>
+<h2> 2. 파이프(Pipe) </h2>
+
 
 ![image](https://github.com/youbeen2798/CS-study_for_interview/assets/62228401/815fca05-dae0-4bbe-af89-1a237eaaf551)
 
@@ -45,7 +46,8 @@ int main()
 }
 ```
 
-<b> 메시지큐(Message Queue) </b>
+
+<h2> 3. 메시지큐(Message Queue) </h2>
 
 - FIFO 정책으로 데이터가 전송되는 기법이다.
 
@@ -70,4 +72,6 @@ msgrcv(msqid, &rbuf, MSGSZ, 1, 0);
 - 파이프는 부모 - 자식 간 통신만 가능하지만 메시지 큐는 어떤 프로세스 간이라도 통신이 가능하다.
 - 즉, 단방향과 양방향의 차이가 있다.
 
-<b> 4. 공유 메모리 </b>
+<h2>  4. 공유 메모리 </h2>
+
+
