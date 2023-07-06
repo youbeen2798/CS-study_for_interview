@@ -114,3 +114,10 @@ Process Metadata에는 다음과 같은 정보들이 들어있다.
 
 - Context Switching 비용은 Process가 Thread보다 많이 든다.
 - 그 이유는 Thread는 Stack 영역을 제외한 모든 메모리를 공유하기에 Context Switcing 발생시 Stack 영역만 변경하면 된다.
+
+<h1> PCB vs TCB </h1>
+
+- PCB는 OS의 스케쥴러에 의해 Context Switching 되는 프로세스의 정보 단위를 의미하고
+- TCB는 스레드 라이브러리에 의해 Context Switching되는 스레드의 정보 단위를 의미한다.
+
+- 
