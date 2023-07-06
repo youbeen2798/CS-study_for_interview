@@ -54,6 +54,8 @@ Process Metadata에는 다음과 같은 정보들이 들어있다.
 
 <h2> 캐시 메모리? </h2>
 
+- 캐시에는 현재 실행 중인 프로세스가 가지고 있는 메모리 주소가 있다.
+- 문맥 교환이 일어나면 기존 프로세스의 정보가 없어지니 Cache clear를 진행한다.
 - 문맥 교환시 Cache memory flush가 이루어지는데 cpu와 메인 메모리 사이에 존재하는 작은 메모리 공간으로 프로세스가 바뀔 때 cache memory를 밀어버리게 된다.
 - 이 작업의 오버헤드가 크다.
 - 캐시를 밀어버림으로써 hit가 줄어들게 되고 초반 프로세스의 작업속도가 느릴 수 있다.
@@ -137,4 +139,5 @@ Process Metadata에는 다음과 같은 정보들이 들어있다.
 - PCB는 OS의 스케쥴러에 의해 Context Switching 되는 프로세스의 정보 단위를 의미하고
 - TCB는 스레드 라이브러리에 의해 Context Switching되는 스레드의 정보 단위를 의미한다.
 
-- 
+<참고>
+<link>https://hwayomingdlog.tistory.com/326</link>
